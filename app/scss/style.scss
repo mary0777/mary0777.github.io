@@ -3,6 +3,135 @@
 @import 'reset';
 @import 'global';
 
+.header {
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 3px;
+  }
+}
+
+.menu {
+  display: flex;
+  margin: 0 155px 0 auto;
+
+
+  &__list {
+    display: flex;
+  }
+
+  &__item--main {
+    margin-right: 43px;
+  }
+
+  &__item--dishes {
+    margin-right: 46px;
+  }
+
+  &__link {
+    line-height: 1.2;
+    transition: color 0.3s linear;
+  }
+
+  &__link:hover {
+    color: $orange-900;
+  }
+
+  &__link--active {
+    color: $orange-900;
+  }
+}
+
+.user-nav {
+  position: relative;
+  height: 23px;
+
+  &__link::before {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 23px;
+  }
+
+  &__link--search::before {
+    background-image: url(../images/user-nav/search.svg);
+    width: 24px;
+    right: 62px;
+  }
+
+  &__link--card::before {
+    background-image: url(../images/user-nav/cart.svg);
+    width: 28px;
+    right: 5px;
+  }
+
+  &__num {
+    position: absolute;
+    border-radius: 50%;
+    background-color: $orange-900;
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #fff;
+    text-align: center;
+    top: -3px;
+    right: 1px;
+  }
+}
+
+.hero {
+
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  &__info {
+    padding: 156px 0 155px 0;
+    max-width: 450px;
+  }
+
+  &__title {
+    @extend %medium;
+    font-size: 66px;
+    text-transform: uppercase;
+    color: $darkBlue-900e;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    color: $orange-900;
+    display: block;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    margin-right: 34px;
+  }
+
+  &__img{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
 
 
 @import 'media';
