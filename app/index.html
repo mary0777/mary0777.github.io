@@ -1,18 +1,574 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Simple Food | Главная страница</title>
+  <link rel="icon" type="image/svg" href="images/favicon.svg" sizes="16x16">
+  <link rel="icon" type="image/svg" href="images/favicon.svg" sizes="32x32">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
+  <div class="wrapper">
 
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
 
+          <a class="logo" href="#">
+            <img src="images/logo.svg" alt="Логотип сайта" width="200" height="39">
+          </a>
 
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item menu__item--main">
+                <a class="menu__link menu__link--active" href="#">
+                  Главная
+                </a>
+              </li>
+              <li class="menu__item menu__item--dishes">
+                <a class="menu__link" href="#">
+                  Блюда
+                </a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="user-nav">
+            <a class="user-nav__link user-nav__link--search" href="#">
+              <span class="sr-only">Нажать для поиска продукта</span>
+            </a>
+            <a class="user-nav__link user-nav__link--card" href="#"
+              style="background-image: url(images/user-nav/cart.svg);">
+              <span class="sr-only">Открыть корзину</span>
+              <span class="user-nav__num">4</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <h1 class="sr-only">Самая быстрая доставка еды</h1>
+
+      <section class="section hero">
+        <div class="container">
+          <div class="hero__inner">
+
+            <div class="hero__info">
+              <h2 class="hero__title">
+                Доставка
+                <span class="hero__subtitle">за 15 минут</span>
+              </h2>
+              <p class="hero__text">
+                Самый быстрый сервис доставки еды в вашем городе. Не уложимся в срок - доставка за наш счёт
+              </p>
+              <a class="btn hero__btn" href="#">
+                Заказать
+              </a>
+              <a class="link" href="#">
+                Подробнее
+              </a>
+            </div>
+            <div class="hero__img" style="background-image: url(images/hero-bg.png);">
+              <span class="sr-only">Фото курьера на скутере</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section categories">
+        <div class="container">
+          <div class="categories__inner">
+
+            <h2 class="title categories__title">
+              Популярные категории
+            </h2>
+
+            <ul class="categories__filter">
+              <li>
+                <button class="categories__button categories__button--burger" type="button"
+                  data-filter=".category-burger">Бургеры</button>
+              </li>
+              <li>
+                <button class="categories__button categories__button--pizza" type="button"
+                  data-filter=".category-pizza">Пицца</button>
+              </li>
+              <li>
+                <button class="categories__button categories__button--sandwich" type="button"
+                  data-filter=".category-sandwitch">Сендвичи</button>
+              </li>
+              <li>
+                <button class="categories__button categories__button--asia" type="button"
+                  data-filter=".category-aziatian">Азиатская кухня</button>
+              </li>
+              <li>
+                <button class="categories__button categories__button--sets" type="button"
+                  data-filter=".category-sets">Cеты</button>
+              </li>
+            </ul>
+
+            <div class="categories__list">
+              <li class="categories__wrapper mix category-burger">
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+              </li>
+
+              <li class="categories__wrapper mix category-pizza">
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+              </li>
+
+              <li class="categories__wrapper mix category-sandwitch">
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+              </li>
+
+              <li class="categories__wrapper mix category-aziatian">
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+              </li>
+
+              <li class="categories__wrapper mix category-sets">
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/cheeseburger.png"></img>
+                  <h3 class="categories__name">Чизбургер с листьями салата</h3>
+                  <div class="categories__price">160 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/bif-burger.png"></img>
+                  <h3 class="categories__name">Бифбургер</h3>
+                  <div class="categories__price">190 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/qween-burger.png"></img>
+                  <h3 class="categories__name">Королевский чизбургер</h3>
+                  <div class="categories__price">260 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/black-burger.png"></img>
+                  <h3 class="categories__name">Черный гамбургер</h3>
+                  <div class="categories__price">199 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+
+                <div class="categories__item">
+                  <img class="categories__img" src="images/burgers/chiken-burger.png"></img>
+                  <h3 class="categories__name">Чикен бургер</h3>
+                  <div class="categories__price">180 грн.</div>
+                  <button class="categories__btn" type="submit">В корзину</button>
+                </div>
+              </li>
+
+            </div>
+
+            <button class="categories__more" type="button">Показать еще</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <div class="container">
+          <div class="footer__menu">
+            <div class="footer__list">
+              <a class="logo footer__logo" href="#">
+                <img src="images/logo.svg" alt="Логотип сайта">
+              </a>
+              <form class="footer__form" action="#" method="get" name="myForm">
+                <label class="sr-only" for="mail">Нажать для написания вашего email</label>
+                <input class="footer__input" type="email" id="mail" name="mail" placeholder="Ваш email"
+                  required="required">
+                <button class="footer__btn" type="submit">Подписаться</button>
+              </form>
+            </div>
+
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Как это работает
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Продукты
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Блюда
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Меню
+                </a>
+              </li>
+            </ul>
+
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  О нас
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Новости
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Партнеры
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  ЧаВо
+                </a>
+              </li>
+            </ul>
+
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Скачать приложение
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Блог
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Что нового?
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="#">
+                  Карта сайта
+                </a>
+              </li>
+            </ul>
+            <div class="footer__list">
+              <ul class="footer__contacts contacts">
+                <li class="contacts__item">
+                  <address class="contacts__link contacts__link--address">
+                    ул. Т.Г.Шевченко, 1
+                  </address>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link contacts__link--tel" href="tel:380501112233">
+                    380501112233
+                  </a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link contacts__link--email" href="mailto:support@sfood.com">
+                    support@sfood.com
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="footer__social social">
+                <li class="social__item">
+                  <a class="social__link social__link--facebook" href="#"
+                    style="background-image: url(images/sprite.svg#facebook);">
+                  </a>
+                  <span class="sr-only">Открыть нашу страницу в facebook</span>
+                </li>
+                <li class="social__item">
+                  <a class="social__link social__link--twitter" href="#"
+                    style="background-image: url(images/sprite.svg#twitter);">
+                  </a>
+                  <span class="sr-only">Открыть нашу страницу в twitter</span>
+                </li>
+                <li class="social__item">
+                  <a class="social__link social__link--instagram" href="#"
+                    style="background-image: url(images/sprite.svg#instagram);">
+                  </a>
+                  <span class="sr-only">Открыть нашу страницу в instagram</span>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copy">
+        © 2022 Simple Food
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="js/mixitup.min.js"></script>
   <script src="js/main.min.js"></script>
 </body>
 
