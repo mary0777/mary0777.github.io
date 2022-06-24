@@ -1,6 +1,31 @@
+@mixin burger {
+	max-width: $burgerWidth; 
+	height: $burgerHeight;
+	position: relative;
+	color: $burgerColor; 
+
+
+}
+
+
+$burgerWidth: 30px;
+$burgerHeight: 20px; 
+$burgerLineHeight: 2px;
+$burgerColor: #363853;
+
+
 $orange-900:#ff6838;
 $silver-200:#ececec;
 $silver-100:#f9faff;
 $gray:#c2c2c2;
 $darkBlue-900e: #363853;
 $dark: #31352b;
+
+$s:375px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+
+

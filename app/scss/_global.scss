@@ -7,6 +7,23 @@ body {
   color: $dark;
 }
 
+.lock {
+  overflow: hidden;
+  position: relative;
+  display: inline;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    // z-index: 10;
+  }
+}
+
 .wrapper {
   overflow-x: hidden;
   min-height: 100%;
@@ -26,6 +43,9 @@ body {
 
 .section {
   padding-bottom: 120px;
+  @media(max-width: $md) {
+   padding-bottom: 40px;
+  }
 }
 
 .sr-only {
@@ -50,6 +70,10 @@ body {
   border-radius: 5px;
   outline: transparent;
   transition: color 0.4s linear, outline 0.4s linear, box-shadow 0.4s linear, background-color 0.4s linear;
+  @media(max-width: $sm){
+    padding: 8px 24px;
+    font-size: 14px;
+  }
 
   &:focus {
     background-color: rgba(255, 122, 80, 0.1);
@@ -76,6 +100,9 @@ body {
   color: $darkBlue-900e;
   border-radius: 5px;
   transition: color 0.4s linear, outline 0.4s linear, box-shadow 0.4s linear, background-color 0.4s linear, text-decoration 0.4s linear;
+  @media(max-width: $sm){
+    font-size: 16px;
+  }
 
   &:focus {
     outline: rgba(255, 255, 255, 0.01);
@@ -96,6 +123,11 @@ body {
   font-weight: 500;
   font-size: 36px;
   color: $darkBlue-900e;
+
+  @media(max-width: $sm) {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
 }
 
 .logo {
@@ -113,5 +145,47 @@ body {
 
   &:active {
     opacity: 0.5;
+  }
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    button {
+      font-size: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $gray;
+      outline: transparent;
+      transition: background-color 0.4s linear,
+        border 0.4s linear, box-shadow 0.4s linear;
+
+      &:focus {
+        box-shadow: 0 0 0 2px #ff6838;
+        background-color: $gray;
+      }
+
+      &:hover {
+        background-color: #fff2ed;
+        box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+      }
+
+      &:active {
+        background-color: #fff2ed;
+      }
+    }
+
+    &.slick-active {
+      button {
+        background-color: #ff7a50;
+      }
+    }
   }
 }
