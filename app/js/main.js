@@ -51,10 +51,10 @@ $(function () {
 
 
   if (window.matchMedia("(min-width: 992px)").matches) {
-    $('.restaurant__list').slick('unslick');
+    $('.restaurant-slider').slick('unslick');
     sliderIsLive = false;
   } else {
-    $('.restaurant__list').slick({
+    $('.restaurant-slider').slick({
       arrows: false,
       fade: true,
       dots: true
@@ -62,6 +62,8 @@ $(function () {
     sliderIsLive = true;
   };
 
+
+  
 
 
 });

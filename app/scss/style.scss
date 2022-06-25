@@ -537,6 +537,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 210px;
+  width: 100%;
   height: 100%;
   background-color: #fff;
   box-shadow: 0 0 0 1px $silver-200;
@@ -786,6 +788,8 @@
 }
 
 .restaurant-card {
+  max-width: 370px;
+  width: 100%;
   background: #fff;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -1420,5 +1424,64 @@
     background-position: top center;
     transition: filter 0.4s linear;
     outline: transparent;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.sales {
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .restaurant-card {
+    justify-content: flex-start;
+  }
+}
+
+.pages-line {
+  margin-top: 160px;
+  background-color: rgba(255, 122, 80, 0.1);
+  margin-bottom: 60px;
+  padding: 24px 0;
+  
+  &__inner{
+    display: flex;
+  }
+
+  &__name {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: #505050;
+    position: relative;
+    padding-right: 17px;
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../images/icons/arrow-page-line.svg);
+        width: 6px;
+        height: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 6px;
+      }
+    }
   }
 }
