@@ -8,22 +8,22 @@ const imagemin       = require('gulp-imagemin');
 const del            = require('del');
 const browserSync    = require('browser-sync').create();
 const svgSprite      = require('gulp-svg-sprite');
-const cheerio = require('gulp-cheerio');
-const replace = require('gulp-replace');
+// const cheerio = require('gulp-cheerio');
+// const replace = require('gulp-replace');
 
 
 function svgSprites() {
   return src('app/images/icons/*.svg') // выбираем в папке с иконками все файлы с расширением svg
-  .pipe(cheerio({
-    run: ($) => {
-        $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
-        $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
-        $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
-    },
-    parserOptions: { xmlMode: true },
-  })
-)
-.pipe(replace('&gt;','>')) // боремся с заменой символа 
+//   .pipe(cheerio({
+//     run: ($) => {
+//         $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
+//         $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
+//         $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
+//     },
+//     parserOptions: { xmlMode: true },
+//   })
+// )
+// .pipe(replace('&gt;','>')) // боремся с заменой символа 
     .pipe(
       svgSprite({
         mode: {
