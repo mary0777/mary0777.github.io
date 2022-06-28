@@ -7,7 +7,7 @@
   &__logo {
     z-index: 2;
 
-    @media (max-width: $sm) {
+    @include r($r-sm) {
       margin-right: 88px;
     }
   }
@@ -17,7 +17,6 @@
     @include burger;
     display: none;
     width: 100%;
-  
   
     &__line {
       position: absolute;
@@ -71,7 +70,7 @@
   
   .burger-open {
   
-    @media (max-width: $md) {
+    @include r($r-md) {
       display: block;
     }
   }
@@ -82,12 +81,13 @@
     align-items: center;
     padding: 58px 3px;
   
-    @media (max-width: $md) {
-      padding: 25px 0;
+    @include r($r-md) {
+      padding: 14px 0;
     }
   
     &--active {
       z-index: 30;
+      padding: 25px 0;
   
       .burger.burger-close {
         display: block;
@@ -114,7 +114,6 @@
         }
       }
   
-     
       .header__address {
         padding-left: 15px;
       }
@@ -125,9 +124,8 @@
       margin: 0 48px 0 auto;
       display: flex;
       transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  
-  
-      @media (max-width: $md) {
+
+      @include r($r-md) {
         position: absolute;
         top: 0;
         right: 10px;
@@ -143,7 +141,7 @@
     }
   
     &__item {
-      @media (max-width: $md) {
+      @include r($r-md) {
         margin-bottom: 20px;
       }
     }
@@ -183,7 +181,7 @@
   .user-nav {
     display: flex;
   
-    @media (max-width: $md) {
+    @include r($r-md) {
       margin: 0 20px 0 auto;
     }
   
@@ -277,7 +275,7 @@
   &__address {
     display: none;
   
-    @media (max-width: $md) {
+    @include r($r-md) {
       display: block;
       border-top: 1px solid #eeeff3;
       padding-top: 15px;

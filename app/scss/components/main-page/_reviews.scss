@@ -1,7 +1,7 @@
 .reviews {
   margin-bottom: 12px;
 
-  @media(max-width: $sm) {
+  @include r($r-sm) {
     margin-bottom: 0;
   }
 
@@ -9,7 +9,7 @@
     text-align: center;
     margin-bottom: 45px;
 
-    @media(max-width: $sm) {
+    @include r($r-sm) {
       margin-bottom: 30px;
     }
   }

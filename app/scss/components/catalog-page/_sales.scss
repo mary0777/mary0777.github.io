@@ -2,6 +2,11 @@
 
   &__title {
     margin-bottom: 60px;
+
+    @include r($r-md){
+      margin-bottom: 40px;
+      text-align: center;
+    }
   }
 
   &__list {
@@ -9,14 +14,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
-    @media(max-width: $lg) {
+    @include r($r-lg) {
       display: flex;
       justify-content: center;
       flex-direction: column;
     }
 
     &.slick-dots {
-      @media(max-width: $lg) {
+      @include r($r-lg) {
         position: absolute;
         display: flex;
         bottom: -45px;

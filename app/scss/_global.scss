@@ -20,7 +20,7 @@ body {
     top: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    // z-index: 10;
+    z-index: 10;
   }
 }
 
@@ -43,7 +43,7 @@ body {
 
 .section {
   padding-bottom: 120px;
-  @media(max-width: $md) {
+  @include r($r-md) {
    padding-bottom: 40px;
   }
 }
@@ -70,7 +70,7 @@ body {
   border-radius: 5px;
   outline: transparent;
   transition: color 0.4s linear, outline 0.4s linear, box-shadow 0.4s linear, background-color 0.4s linear;
-  @media(max-width: $sm){
+  @include r($r-sm){
     padding: 8px 24px;
     font-size: 14px;
   }
@@ -100,7 +100,7 @@ body {
   color: $darkBlue-900e;
   border-radius: 5px;
   transition: color 0.4s linear, outline 0.4s linear, box-shadow 0.4s linear, background-color 0.4s linear, text-decoration 0.4s linear;
-  @media(max-width: $sm){
+  @include r($r-sm) {
     font-size: 16px;
   }
 
@@ -124,7 +124,7 @@ body {
   font-size: 36px;
   color: $darkBlue-900e;
 
-  @media(max-width: $sm) {
+  @include r($r-sm) {
     font-size: 24px;
     margin-bottom: 30px;
   }

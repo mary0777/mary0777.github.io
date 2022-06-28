@@ -3,7 +3,12 @@
   background-color: rgba(255, 122, 80, 0.1);
   margin-bottom: 60px;
   padding: 24px 0;
-  
+
+  @include r($r-md) {
+    margin-top: 72px;
+   margin-bottom: 40px;
+   }
+
   &__list{
     display: flex;
   }

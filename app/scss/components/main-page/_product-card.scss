@@ -65,7 +65,7 @@
     display: block;
     margin: 0 auto;
 
-    @media(max-width: $sm) {
+    @include r($r-sm) {
       font-size: 20px;
     }
   }

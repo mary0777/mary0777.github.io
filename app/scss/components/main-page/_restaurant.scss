@@ -1,6 +1,6 @@
 .restaurant {
 
-  @media(max-width: $md) {
+  @include r($r-md) {
     padding-bottom: 85px;
   }
 
@@ -9,7 +9,7 @@
     text-align: center;
     @include line-clamp(1);
 
-    @media(max-width: $sm) {
+    @include r($r-sm) {
       margin-bottom: 30px;
     }
   }
@@ -19,7 +19,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
-    @media(max-width: $lg) {
+    @include r($r-lg) {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -27,7 +27,7 @@
 
 
     &.slick-dots {
-      @media(max-width: $lg) {
+      @include r($r-lg) {
         position: absolute;
         display: flex;
         bottom: -45px;

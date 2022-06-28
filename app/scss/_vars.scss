@@ -19,11 +19,12 @@
   }
 }
 
-// @mixin r($width) {
-//   @media (max-width: #{$width}px) {
-//     @content;
-//    }
-// }
+
+@mixin r($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+   }
+}
 
 $burgerWidth: 30px;
 $burgerHeight: 20px; 
@@ -38,11 +39,9 @@ $gray:#c2c2c2;
 $darkBlue-900e: #363853;
 $dark: #31352b;
 
-$s:375px;
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
 
-
-
+$r-s:  375;
+$r-sm: 576;
+$r-md: 768;
+$r-lg: 992;
+$r-xl: 1200;

@@ -8,7 +8,7 @@
     min-height: 380px;
     background-size: 570px 380px;
 
-    @media(max-width: $xl) {
+    @include r($r-xl) {
       background-image: none !important;
       min-height: 0;
     }
@@ -17,7 +17,7 @@
   &__info {
     max-width: 540px;
 
-    @media(max-width: $xl) {
+    @include r($r-xl) {
       max-width: 100%;
     }
   }
@@ -25,7 +25,7 @@
   &__title {
     margin-bottom: 45px;
 
-    @media(max-width: $sm) {
+    @include r($r-sm) {
       margin-bottom: 10px;
     }
   }
@@ -36,7 +36,7 @@
     line-height: 1.5;
     opacity: 0.9;
 
-    @media(max-width: $sm) {
+    @include r($r-sm) {
       font-size: 14px;
       margin-bottom: 10px;
     }

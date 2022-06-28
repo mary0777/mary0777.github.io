@@ -50,6 +50,46 @@
                 Контакты
               </a>
             </li>
+
+            <address class="address header__address">
+              <ul class="contacts">
+                <li class="contacts__item">
+                  <a class="contacts__link contacts__link--address" href="#">
+                    ул. Т.Г.Шевченко, 1
+                  </a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link contacts__link--tel" href="tel:380501112233">
+                    380501112233
+                  </a>
+                </li>
+                <li class="contacts__item">
+                  <a class="contacts__link contacts__link--email" href="mailto:support@sfood.com">
+                    support@sfood.com
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="footer__social social">
+                <li class="social__item">
+                  <a class="social__link" href="#" style="background-image: url(images/sprite.svg#facebook);">
+                    <span class="sr-only">Перейти на нашу страницу в facebook</span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link" href="#" style="background-image: url(images/sprite.svg#twitter);">
+                    <span class="sr-only">Перейти на нашу страницу в twitter</span>
+                  </a>
+                </li>
+                <li class="social__item">
+                  <a class="social__link social__link--instagram" href="#"
+                    style="background-image: url(images/sprite.svg#instagram);">
+                    <span class="sr-only">Перейти на нашу страницу в instagram</span>
+                  </a>
+                </li>
+              </ul>
+
+            </address>
           </ul>
 
           <div class="user-nav">
@@ -92,7 +132,14 @@
             <h2 class="title products-catalog__title">
               Каталог продуктов
             </h2>
+
+
+
             <form class="products-catalog__form-top" action="#">
+              <button class="filter-btn" type="button">
+                <span class="sr-only">Нажать для открытия фильтра категорий, предложений, цен</span>
+              </button>
+
               <div class="products-catalog__wrapper">
                 <select class="products-catalog__select" name="select-filter">
                   <option value="1">По названию</option>
@@ -114,8 +161,13 @@
           </div>
 
           <div class="products-catalog__content">
+
+
             <aside class="products-catalog__aside">
 
+              <button class="burger-filter" type="button">
+
+              </button>
               <div class="products-catalog__categories filter-catalog">
                 <h3 class="products-catalog__descr">
                   Категории
@@ -528,7 +580,6 @@
           </ul>
         </div>
       </section>
-
 
     </main>
 

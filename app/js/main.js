@@ -28,9 +28,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+
+  const filterOpen = document.querySelector('.filter-btn');
+  const burgerFilter = document.querySelector('.burger-filter');
+  const catalog = document.querySelector('.products-catalog__aside');
+  const bodyLock = document.querySelector('body');
+
+  filterOpen.addEventListener('click', function (e) {
+    catalog.classList.toggle('products-catalog__aside--active');
+    burgerFilter.classList.add('burger-filter--active');
+    bodyLock.classList.add('lock');
+  });
+
+  burgerFilter.addEventListener('click', function (e) {
+    catalog.classList.remove('products-catalog__aside--active');
+    burgerFilter.classList.remove('burger-filter--active');
+    bodyLock.classList.remove('lock');
+  });
+  
+
+  document.addEventListener('click', function (e) {
+    if (e.target !== (filterOpen) && e.target !== catalog) {
+      burgerFilter.classList.remove('burger-filter--active');
+      catalog.classList.remove('products-catalog__aside--active');
+      bodyLock.classList.remove('lock');
+    }
+  });
+
+
+});
 
 
 
+
+if (window.matchMedia("(min-width: 992px)").matches) {
+  $('.restaurant-slider').slick('unslick');
+  sliderIsLive = false;
+} else {
+  $('.restaurant-slider').slick({
+    arrows: false,
+    fade: true,
+    dots: true
+  });
+  sliderIsLive = true;
+};
 
 
 
@@ -53,23 +95,6 @@ $(function () {
       }
     }]
   });
-
-
-  if (window.matchMedia("(min-width: 992px)").matches) {
-    $('.restaurant-slider').slick('unslick');
-    sliderIsLive = false;
-  } else {
-    $('.restaurant-slider').slick({
-      arrows: false,
-      fade: true,
-      dots: true
-    });
-    sliderIsLive = true;
-  };
-
-
-  
-
 
 });
 
