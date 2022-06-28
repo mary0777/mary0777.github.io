@@ -36,12 +36,12 @@
 
 
             <li class="menu__item">
-              <a class="menu__link menu__link--active" href="index.html">
+              <a class="menu__link" href="index.html">
                 Главная
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="catalog.html">
+              <a class="menu__link menu__link--active" href="catalog.html">
                 Блюда
               </a>
             </li>
@@ -73,39 +73,160 @@
 
     <main class="main">
 
-      <div class="pages-line">
+      <section class="breadcrumbs">
         <div class="container">
-          <div class="page-line__inner">
-            <span class="pages-line__name">Главная </span>
-            <span class="pages-line__name">Каталог товаров</span>
-          </div>
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a class="breadcrumbs__link" href="#">Каталог товаров</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      <section class="products-catalog">
+      <section class="section products-catalog">
         <div class="container">
           <div class="products-catalog__top">
             <h2 class="title products-catalog__title">
-              Популярные категории
+              Каталог продуктов
             </h2>
             <form class="products-catalog__form-top" action="#">
-              <select class="products-catalog__select-name">
-                <option value="price_asc">По цене, сначала дешевые</option>
-                <option value="price_desc">По цене, сначала дорогие</option>
-                <option value="rating_desc">По популярности</option>
-                <option value="good_asc" selected>По названию</option>
-              </select>
-              <select class="products-catalog__select-num">
-                <option value="12" selected>по <span>12</span></option>
-                <option value="24">по <span>24</span></option>
-                <option value="48">по <span>48</span></option>
-                <option value="62">по <span>62</span></option>
-              </select>
+              <div class="products-catalog__wrapper">
+                <select class="products-catalog__select" name="select-filter">
+                  <option value="1">По названию</option>
+                  <option value="2">По названию</option>
+                  <option value="3">По названию</option>
+                  <option value="4" selected>По названию</option>
+                </select>
+              </div>
+
+              <div class="products-catalog__wrapper">
+                <select class="products-catalog__select" name="select-filter">
+                  <option value="12" selected>по <span>12</span></option>
+                  <option value="24">по <span>24</span></option>
+                  <option value="48">по <span>48</span></option>
+                  <option value="62">по <span>62</span></option>
+                </select>
+              </div>
             </form>
           </div>
 
           <div class="products-catalog__content">
-            <aside class="products-catalog__aside"></aside>
+            <aside class="products-catalog__aside">
+
+              <div class="products-catalog__categories filter-catalog">
+                <h3 class="products-catalog__descr">
+                  Категории
+                </h3>
+                <ul class="products-catalog__items">
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Бургеры
+                    </a>
+                  </li>
+
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Пицца
+                    </a>
+                  </li>
+
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Сендвичи
+                    </a>
+                  </li>
+
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Азиатская кухня
+                    </a>
+                  </li>
+
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Сеты
+                    </a>
+                  </li>
+
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Европейская кухня
+                    </a>
+                  </li>
+
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Напитки
+                    </a>
+                  </li>
+
+                  <li class="products-catalog__box">
+                    <a class="products-catalog__link" href="#">
+                      Алкоголь
+                    </a>
+                  </li>
+
+                </ul>
+              </div>
+
+              <div class="products-catalog__offer filter-catalog">
+                <h3 class="products-catalog__descr">
+                  Предложения
+                </h3>
+                <form class="products-catalog__form" action="#">
+
+                  <label class="products-catalog__label" for="sales">
+                    <input class="products-catalog__input" type="checkbox" id="sales" name="offer" value="sales">
+                    <span class="products-catalog__checkbox"></span>
+                    Со скидкой
+                  </label>
+
+                  <label class="products-catalog__label" for="news">
+                    <input class="products-catalog__input" type="checkbox" id="news" name="offer" value="news" checked>
+                    <span class="products-catalog__checkbox"></span>
+                    Новинка
+                  </label>
+
+                  <label class="products-catalog__label" for="hit">
+                    <input class="products-catalog__input" type="checkbox" id="hit" name="offer" value="hit">
+                    <span class="products-catalog__checkbox"></span>
+                    Хит
+                  </label>
+
+                </form>
+              </div>
+
+              <div class="products-catalog__price filter-catalog">
+                <h3 class="products-catalog__descr">
+                  Цена
+                </h3>
+                <div class="price-input">
+                  <div class="field">
+                    <span>от</span>
+                    <input type="number" class="input-min" value="100">
+                    <span class="currency">₴</span>
+                    <span class="sr-only">Нажать для изменения минимальной цены поиска товара</span>
+                  </div>
+                  <div class="field">
+                    <span>до</span>
+                    <input type="number" class="input-max" value="1000">
+                    <span class="currency">₴</span>
+                    <span class="sr-only">Нажать для изменения максимальной цены поиска товара</span>
+                  </div>
+                </div>
+                <div class="slider">
+                  <div class="progress"></div>
+                </div>
+                <div class="range-input">
+                  <input type="range" class="range-min" min="0" max="1200" value="100" step="10">
+                  <input type="range" class="range-max" min="0" max="1200" value="1000" step="10">
+                </div>
+              </div>
+
+            </aside>
 
             <div class="products-catalog__inner">
               <ul class="products-catalog__list">
@@ -229,6 +350,104 @@
                   </article>
                 </li>
 
+                <li class="products-catalog__item">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/burgers/cheeseburger.png"
+                        alt="Фото чизбургер с листьями салата" width="140" height="140">
+                      <h3 class="product-card__name">Чизбургер с листьями салата</h3>
+                    </a>
+                    <span class="product-card__price">
+                      160
+                      <span>грн.</span>
+                    </span>
+                    <button class="product-card__btn" type="button">В корзину</button>
+                  </article>
+                </li>
+
+                <li class="products-catalog__item">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/burgers/bif-burger.png" alt="Фото бифбургера"
+                        width="140" height="140">
+                      <h3 class="product-card__name">Бифбургер</h3>
+                    </a>
+                    <span class="product-card__price">
+                      190
+                      <span>грн.</span>
+                    </span>
+                    <button class="product-card__btn" type="button">В корзину</button>
+                  </article>
+                </li>
+
+                <li class="products-catalog__item">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/burgers/qween-burger.png"
+                        alt="Фото королевского чизбергера" width="140" height="140">
+                      <h3 class="product-card__name">Королевский чизбургер</h3>
+                    </a>
+                    <span class="product-card__price">
+                      260
+                      <span>грн.</span>
+                    </span>
+                    <button class="product-card__btn" type="button">В корзину</button>
+                  </article>
+                </li>
+
+                <li class="products-catalog__item">
+                  <article class="product-card">
+                    <a class="product-card__link" href="#">
+                      <img class="product-card__img" src="images/burgers/black-burger.png" alt="Фото черного гамбургера"
+                        width="140" height="140">
+                      <h3 class="product-card__name">Черный гамбургер</h3>
+                    </a>
+                    <span class="product-card__price">
+                      199
+                      <span>грн.</span>
+                    </span>
+                    <button class="product-card__btn" type="button">В корзину</button>
+                  </article>
+                </li>
+
+              </ul>
+
+              <ul class="pages">
+                <li class="pages__item">
+                  <button class="pages__button pages__button-prev" type="button">
+                    <span class="sr-only">Нажать для перехода на предыдущую страницу</span>
+                  </button>
+                </li>
+                <li class="pages__item">
+                  <button class="pages__button pages__button--active" type="button">
+                    1
+                  </button>
+                </li>
+                <li class="pages__item">
+                  <button class="pages__button" type="button">
+                    2
+                  </button>
+                </li>
+                <li class="pages__item">
+                  <button class="pages__button" type="button">
+                    ...
+                  </button>
+                </li>
+                <li class="pages__item">
+                  <button class="pages__button" type="button">
+                    9
+                  </button>
+                </li>
+                <li class="pages__item">
+                  <button class="pages__button" type="button">
+                    10
+                  </button>
+                </li>
+                <li class="pages__item">
+                  <button class="pages__button pages__button-next" type="button">
+                    <span class="sr-only">Нажать для перехода на следующую страницу</span>
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -237,27 +456,27 @@
       </section>
 
 
-      <section class="section app">
+      <section class="section download-app">
         <div class="container">
-          <div class="app__inner" style="background-image: url(images/app-bg.jpg);">
-            <div class="app__info">
-              <h2 class="title app__title">
+          <div class="download-app__inner" style="background-image: url(images/app-bg.jpg);">
+            <div class="download-app__info">
+              <h2 class="title download-app__title">
                 Скачайте мобильное приложение
               </h2>
-              <div class="app__text">
+              <div class="download-app__text">
                 <p>
                   Рестораны, которые вы любите - в ваших руках. Устанавливайте приложение и заказывайте еду в любом
                   удобном месте.
                 </p>
               </div>
-              <ul class="app__list">
-                <li class="app__item">
-                  <a class="app__link" href="#" style="background-image: url(images/app-store.png);">
+              <ul class="download-app__list">
+                <li class="download-app__item">
+                  <a class="download-app__link" href="#" style="background-image: url(images/app-store.png);">
                     <span class="sr-only">Нажать для перехода в App Store</span>
                   </a>
                 </li>
-                <li class="app__item">
-                  <a class="app__link" href="#" style="background-image: url(images/google-play.png);">
+                <li class="download-app__item">
+                  <a class="download-app__link" href="#" style="background-image: url(images/google-play.png);">
                     <span class="sr-only">Нажать для перехода в Google Play</span>
                   </a>
                 </li>
@@ -284,7 +503,7 @@
                 </div>
               </article>
             </li>
-            <li class="restaurant__item">
+            <li class="sales__item">
               <article class="restaurant-card">
                 <img class="restaurant-card__img" src="images/restaurant/kfc.jpg" alt="Фото ресторана KFC" width="370"
                   height="300">
@@ -295,7 +514,7 @@
                 </div>
               </article>
             </li>
-            <li class="restaurant__item">
+            <li class="sales__item">
               <article class="restaurant-card">
                 <img class="restaurant-card__img" src="images/restaurant/star.jpg" alt="Фото ресторана Star Burgers"
                   width="370" height="300">

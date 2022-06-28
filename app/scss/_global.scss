@@ -96,7 +96,7 @@ body {
 .link {
   font-size: 20px;
   line-height: 1.5;
-  text-decoration-line: underline;
+  text-decoration: underline $darkBlue-900e;
   color: $darkBlue-900e;
   border-radius: 5px;
   transition: color 0.4s linear, outline 0.4s linear, box-shadow 0.4s linear, background-color 0.4s linear, text-decoration 0.4s linear;
@@ -110,7 +110,7 @@ body {
   }
 
   &:hover {
-    text-decoration: transparent;
+    text-decoration: underline transparent;
     color: $orange-900;
   }
 

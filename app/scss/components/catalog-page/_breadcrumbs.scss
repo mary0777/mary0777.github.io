@@ -1,0 +1,36 @@
+.breadcrumbs {
+  margin-top: 160px;
+  background-color: rgba(255, 122, 80, 0.1);
+  margin-bottom: 60px;
+  padding: 24px 0;
+  
+  &__list{
+    display: flex;
+  }
+
+  &__item{
+    position: relative;
+    padding-right: 17px;
+
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../images/icons/arrow-page-line.svg);
+        width: 6px;
+        height: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 6px;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: #505050;
+  }
+}

@@ -1,0 +1,48 @@
+.contacts {
+
+  &__item {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    font-size: 16px;
+    line-height: 32px;
+    position: relative;
+    display: inline-block;
+    padding-left: 31px;
+    border-radius: 5px;
+    text-decoration: underline transparent;
+    transition: text-decoration 0.4s linear, outline 0.4s linear, box-shadow 0.4s linear;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+
+    &--address::before {
+      background-image: url(../images/contacts-icons/location.svg);
+    }
+
+    &--tel::before {
+      background-image: url(../images/contacts-icons/calling.svg);
+    }
+
+    &--email::before {
+      background-image: url(../images/contacts-icons/message.svg);
+    }
+
+    &:focus {
+      outline: rgba(255, 255, 255, 0.01);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+
+    &:hover {
+      text-decoration: underline $orange-900;
+    }
+  }
+}

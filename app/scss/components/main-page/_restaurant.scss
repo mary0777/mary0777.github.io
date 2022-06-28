@@ -1,0 +1,38 @@
+.restaurant {
+
+  @media(max-width: $md) {
+    padding-bottom: 85px;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    text-align: center;
+    @include line-clamp(1);
+
+    @media(max-width: $sm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media(max-width: $lg) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+
+    &.slick-dots {
+      @media(max-width: $lg) {
+        position: absolute;
+        display: flex;
+        bottom: -45px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,35 @@
+.sales {
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media(max-width: $lg) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &.slick-dots {
+      @media(max-width: $lg) {
+        position: absolute;
+        display: flex;
+        bottom: -45px;
+      }
+    }
+  }
+
+  .restaurant-card {
+    justify-content: flex-start;
+
+    &__text{
+      @include line-clamp(3);
+      font-size: 24px;
+    }
+  }
+}
