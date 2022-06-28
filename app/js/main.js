@@ -62,17 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-if (window.matchMedia("(min-width: 992px)").matches) {
-  $('.restaurant-slider').slick('unslick');
-  sliderIsLive = false;
-} else {
-  $('.restaurant-slider').slick({
-    arrows: false,
-    fade: true,
-    dots: true
-  });
-  sliderIsLive = true;
-};
+
 
 
 
@@ -83,7 +73,7 @@ $(function () {
   var mixer = mixitup('.categories__list', {});
   mixer.filter('.category-burger');
 
-
+  
   $('.reviews-slider').slick({
     dots: true,
     prevArrow: '<button type="button" class="slick__btn slick-prev"></button>',
@@ -95,6 +85,9 @@ $(function () {
       }
     }]
   });
+
+
+  
 
 });
 
@@ -146,3 +139,14 @@ rangeInput.forEach(input =>{
 
 
 
+if (window.matchMedia("(min-width: 992px)").matches) {
+  $('.restaurant-slider').slick('unslick');
+  sliderIsLive = false;
+} else {
+  $('.restaurant-slider').slick({
+    arrows: false,
+    fade: true,
+    dots: true
+  });
+  sliderIsLive = true;
+};

@@ -1,6 +1,8 @@
 .social {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  max-width: 200px;
 
   &__item {
     width: 39px;
@@ -10,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-bottom: 20px; 
     transition: background-color 0.4s linear, box-shadow 0.4s linear, filter 0.4s ease;
 
     &:not(:last-child) {
