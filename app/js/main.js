@@ -146,3 +146,12 @@ if (window.matchMedia("(min-width: 768px)").matches) {
   
  
 
+$('.proposition-slider').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  centerMode: true,
+  // autoplay: true,
+  // autoplaySpeed: 2000,
+  prevArrow: '<button type="button" class="slick__btn slick-prev"></button>',
+  nextArrow: '<button type="button" class="slick__btn slick-next"></button>',
+});
