@@ -1,0 +1,75 @@
+.price-catalog {
+  padding: 0 15px;
+
+  &__label {
+    font-size: 16px;
+    line-height: 1.2;
+    color: $gray;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+
+  &__from,
+  &__to {
+    max-width: 70px;
+    width: 100%;
+    outline: transparent;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    margin: 0 5px;
+    text-align: center;
+    background-color: #faeded;
+    border: 1px solid #faeded;
+    border-radius: 3px;
+    color: $dark;
+    padding: 12px 14px;
+  }
+
+  &__between {
+    margin: 0 10px;
+  }
+
+  .irs--flat {
+    height: 40px;
+  }
+
+  .irs--flat .irs-line {
+    top: 25px;
+    height: 2px;
+    background-color: $silver-200;
+  }
+
+  .irs--flat .irs-bar {
+    top: 25px;
+    height: 2px;
+    background-color: $orange-900;
+  }
+
+  .irs--flat .irs-min,
+  .irs--flat .irs-max {
+    display: none;
+  }
+
+  .irs-from,
+  .irs-to {
+    display: none;
+  }
+
+  .irs--flat .irs-single {
+    display: none;
+  }
+
+  .irs--flat .irs-handle {
+    top: 18px;
+    width: 18px;
+    height: 18px;
+    background-color: $orange-900;
+    border-radius: 50%;
+  }
+
+  .irs--flat .irs-handle>i {
+    display: none;
+  }
+}

@@ -34,6 +34,7 @@
 
   &__quote {
     padding: 30px 40px;
+    @include line-clamp(10);
 
     @include r($r-sm) {
       padding: 15px 40px;
@@ -47,7 +48,7 @@
     margin-bottom: 30px;
     max-width: 570px;
     position: relative;
-    @include line-clamp(10);
+    
 
     @include r($r-sm) {
       font-size: 14px;
@@ -166,6 +167,48 @@
 
     @include r($r-lg) {
       right: 8%;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+  
+    li {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+  
+      button {
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $gray;
+        outline: transparent;
+        transition: background-color 0.4s linear,
+          border 0.4s linear, box-shadow 0.4s linear;
+  
+        &:focus {
+          box-shadow: 0 0 0 2px #ff6838;
+          background-color: $gray;
+        }
+  
+        &:hover {
+          background-color: #fff2ed;
+          box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+        }
+  
+        &:active {
+          background-color: #fff2ed;
+        }
+      }
+  
+      &.slick-active {
+        button {
+          background-color: #ff7a50;
+        }
+      }
     }
   }
 }

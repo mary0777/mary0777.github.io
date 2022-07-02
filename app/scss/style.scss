@@ -7,23 +7,25 @@
 
 
 @import './components/main-page/hero';
-@import './components/main-page/header';
+@import './components/global-page/header';
 @import './components/main-page/categories';
-@import './components/main-page/product-card';
+@import './components/global-page/product-card';
 @import './components/main-page/features';
 @import './components/main-page/restaurant';
-@import './components/main-page/restaurant-card';
+@import './components/global-page/restaurant-card';
 @import './components/main-page/reviews';
 @import './components/main-page/reviews-slider';
-@import './components/main-page/download-app';
-@import './components/main-page/footer';
-@import './components/main-page/contacts';
-@import './components/main-page/social';
+@import './components/global-page/download-app';
+@import './components/global-page/footer';
+@import './components/global-page/contacts';
+@import './components/global-page/social';
 
 
-@import './components/catalog-page/sales';
-@import './components/catalog-page/breadcrumbs';
+@import './components/global-page/breadcrumbs';
 @import './components/catalog-page/product-catalog';
+@import './components/catalog-page/price-catalog';
+@import './components/catalog-page/sales';
+@import './components/catalog-page/pagination';
 
 
 

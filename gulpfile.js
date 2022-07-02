@@ -13,7 +13,7 @@ const fileInclude    = require('gulp-file-include');
 // const replace = require('gulp-replace');
 
 const htmlInclude = () => {
-  return src(['app/html/*.html']) // Находит любой .html файл в папке "html", куда будем подключать другие .html файлы													
+  return src(['app/html/components/*.html']) // Находит любой .html файл в папке "html", куда будем подключать другие .html файлы													
   .pipe(fileInclude({
     prefix: '@',
     basepath: '@file',
@@ -72,6 +72,7 @@ function scripts() {
     'node_modules/jquery/dist/jquery.js',
     'node_modules/slick-carousel/slick/slick.js',
     'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/ion-rangeSlider/js/ion.rangeSlider.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))

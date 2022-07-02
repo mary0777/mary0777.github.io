@@ -1,23 +1,22 @@
 .breadcrumbs {
-  margin-top: 160px;
   background-color: rgba(255, 122, 80, 0.1);
   margin-bottom: 60px;
   padding: 24px 0;
 
   @include r($r-md) {
-    margin-top: 72px;
-   margin-bottom: 40px;
-   }
+    margin-bottom: 40px;
+  }
 
-  &__list{
+  &__list {
     display: flex;
   }
 
-  &__item{
+  &__item {
     position: relative;
     padding-right: 17px;
 
     &:not(:last-child) {
+
       &::after {
         content: '';
         position: absolute;
@@ -37,5 +36,16 @@
     line-height: 1.2;
     letter-spacing: 0.03em;
     color: #505050;
+    transition: color 0.4s linear;
+
+    &:hover {
+      color: $orange-900;
+    }
+
+    &--active {
+      &:hover {
+        color: inherit;
+      }
+    }
   }
 }

@@ -1,9 +1,19 @@
+
+$(window).scroll(function () {
+  var sticky = $('.header'),
+      scroll = $(window).scrollTop();
+
+  if (scroll >= 50) sticky.addClass('fixed');
+  else sticky.removeClass('fixed');
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const burgerOpen = document.querySelector('.burger-open');
-  const burgerClose = document.querySelector('.burger-close');
+  const burgerClose = document.querySelector('.close');
   const mobileMenu = document.querySelector('.menu');
   const bodyLock = document.querySelector('body');
+  
 
   burgerOpen.addEventListener('click', function (e) {
     mobileMenu.classList.toggle('menu--active');
@@ -17,14 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyLock.classList.remove('lock');
   });
 
-  document.addEventListener('click', function (e) {
-    if (e.target !== (burgerOpen) && e.target !== mobileMenu) {
-      burgerClose.classList.remove('burger--active');
-      mobileMenu.classList.remove('menu--active');
-      bodyLock.classList.remove('lock');
-    }
-  });
-
 
 });
 
@@ -32,46 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const filterOpen = document.querySelector('.filter-btn');
   const burgerFilter = document.querySelector('.burger-filter');
-  const catalog = document.querySelector('.products-catalog__aside');
+  const catalog = document.querySelector('.products-catalog__sidebar');
   const bodyLock = document.querySelector('body');
+ 
 
   filterOpen.addEventListener('click', function (e) {
-    catalog.classList.toggle('products-catalog__aside--active');
+    catalog.classList.toggle('products-catalog__sidebar--active');
     burgerFilter.classList.add('burger-filter--active');
-    bodyLock.classList.add('lock');
+    bodyLock.classList.add('lock-catalog');
   });
 
   burgerFilter.addEventListener('click', function (e) {
-    catalog.classList.remove('products-catalog__aside--active');
+    catalog.classList.remove('products-catalog__sidebar--active');
     burgerFilter.classList.remove('burger-filter--active');
-    bodyLock.classList.remove('lock');
+    bodyLock.classList.remove('lock-catalog');
   });
   
-
-  document.addEventListener('click', function (e) {
-    if (e.target !== (filterOpen) && e.target !== catalog) {
-      burgerFilter.classList.remove('burger-filter--active');
-      catalog.classList.remove('products-catalog__aside--active');
-      bodyLock.classList.remove('lock');
-    }
-  });
-
 
 });
 
 
 
-
-
-
-
-
-
-
 $(function () {
-
   var mixer = mixitup('.categories__list', {});
   mixer.filter('.category-burger');
+
 
   
   $('.reviews-slider').slick({
@@ -86,60 +73,65 @@ $(function () {
     }]
   });
 
-
-  
-
 });
 
 
+var $range = $(".price-catalog__input"),
+    $inputFrom = $(".price-catalog__from"),
+    $inputTo = $(".price-catalog__to"),
+    instance,
+    min = 0,
+    max = max,
+    from = 0,
+    to = 0;
 
+$range.ionRangeSlider({
+    type: "double",
+    onStart: updateInputs,
+    onChange: updateInputs
+});
+instance = $range.data("ionRangeSlider");
 
+function updateInputs (data) {
+	from = data.from;
+    to = data.to;
+    
+    $inputFrom.prop("value", from);
+    $inputTo.prop("value", to);	
+}
 
-const rangeInput = document.querySelectorAll(".range-input input"),
-priceInput = document.querySelectorAll(".price-input input"),
-range = document.querySelector(".slider .progress");
-let priceGap = 100;
-
-priceInput.forEach(input =>{
-    input.addEventListener("input", e =>{
-        let minPrice = parseInt(priceInput[0].value),
-        maxPrice = parseInt(priceInput[1].value);
-        
-        if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
-            if(e.target.className === "input-min"){
-                rangeInput[0].value = minPrice;
-                range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
-            }else{
-                rangeInput[1].value = maxPrice;
-                range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-            }
-        }
+$inputFrom.on("input", function () {
+    var val = $(this).prop("value");
+    
+    // validate
+    if (val < min) {
+        val = min;
+    } else if (val > to) {
+        val = to;
+    }
+    
+    instance.update({
+        from: val
     });
 });
 
-rangeInput.forEach(input =>{
-    input.addEventListener("input", e =>{
-        let minVal = parseInt(rangeInput[0].value),
-        maxVal = parseInt(rangeInput[1].value);
-
-        if((maxVal - minVal) < priceGap){
-            if(e.target.className === "range-min"){
-                rangeInput[0].value = maxVal - priceGap
-            }else{
-                rangeInput[1].value = minVal + priceGap;
-            }
-        }else{
-            priceInput[0].value = minVal;
-            priceInput[1].value = maxVal;
-            range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
-            range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-        }
+$inputTo.on("input", function () {
+    var val = $(this).prop("value");
+    
+    // validate
+    if (val < from) {
+        val = from;
+    } else if (val > max) {
+        val = max;
+    }
+    
+    instance.update({
+        to: val
     });
 });
 
 
-
-if (window.matchMedia("(min-width: 992px)").matches) {
+if (window.matchMedia("(min-width: 768px)").matches) {
   $('.restaurant-slider').slick('unslick');
   sliderIsLive = false;
 } else {
@@ -149,4 +141,8 @@ if (window.matchMedia("(min-width: 992px)").matches) {
     dots: true
   });
   sliderIsLive = true;
+
 };
+  
+ 
+
