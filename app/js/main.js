@@ -1,7 +1,6 @@
-
 $(window).scroll(function () {
   var sticky = $('.header'),
-      scroll = $(window).scrollTop();
+    scroll = $(window).scrollTop();
 
   if (scroll >= 50) sticky.addClass('fixed');
   else sticky.removeClass('fixed');
@@ -13,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerClose = document.querySelector('.close');
   const mobileMenu = document.querySelector('.menu');
   const bodyLock = document.querySelector('body');
-  
+
 
   burgerOpen.addEventListener('click', function (e) {
     mobileMenu.classList.toggle('menu--active');
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const burgerFilter = document.querySelector('.burger-filter');
   const catalog = document.querySelector('.products-catalog__sidebar');
   const bodyLock = document.querySelector('body');
- 
+
 
   filterOpen.addEventListener('click', function (e) {
     catalog.classList.toggle('products-catalog__sidebar--active');
@@ -49,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     burgerFilter.classList.remove('burger-filter--active');
     bodyLock.classList.remove('lock-catalog');
   });
-  
+
 
 });
 
@@ -60,7 +59,7 @@ $(function () {
   mixer.filter('.category-burger');
 
 
-  
+
   $('.reviews-slider').slick({
     dots: true,
     prevArrow: '<button type="button" class="slick__btn slick-prev"></button>',
@@ -77,57 +76,57 @@ $(function () {
 
 
 var $range = $(".price-catalog__input"),
-    $inputFrom = $(".price-catalog__from"),
-    $inputTo = $(".price-catalog__to"),
-    instance,
-    min = 0,
-    max = max,
-    from = 0,
-    to = 0;
+  $inputFrom = $(".price-catalog__from"),
+  $inputTo = $(".price-catalog__to"),
+  instance,
+  min = 0,
+  max = max,
+  from = 0,
+  to = 0;
 
 $range.ionRangeSlider({
-    type: "double",
-    onStart: updateInputs,
-    onChange: updateInputs
+  type: "double",
+  onStart: updateInputs,
+  onChange: updateInputs
 });
 instance = $range.data("ionRangeSlider");
 
-function updateInputs (data) {
-	from = data.from;
-    to = data.to;
-    
-    $inputFrom.prop("value", from);
-    $inputTo.prop("value", to);	
+function updateInputs(data) {
+  from = data.from;
+  to = data.to;
+
+  $inputFrom.prop("value", from);
+  $inputTo.prop("value", to);
 }
 
 $inputFrom.on("input", function () {
-    var val = $(this).prop("value");
-    
-    // validate
-    if (val < min) {
-        val = min;
-    } else if (val > to) {
-        val = to;
-    }
-    
-    instance.update({
-        from: val
-    });
+  var val = $(this).prop("value");
+
+  // validate
+  if (val < min) {
+    val = min;
+  } else if (val > to) {
+    val = to;
+  }
+
+  instance.update({
+    from: val
+  });
 });
 
 $inputTo.on("input", function () {
-    var val = $(this).prop("value");
-    
-    // validate
-    if (val < from) {
-        val = from;
-    } else if (val > max) {
-        val = max;
-    }
-    
-    instance.update({
-        to: val
-    });
+  var val = $(this).prop("value");
+
+  // validate
+  if (val < from) {
+    val = from;
+  } else if (val > max) {
+    val = max;
+  }
+
+  instance.update({
+    to: val
+  });
 });
 
 
@@ -143,15 +142,68 @@ if (window.matchMedia("(min-width: 768px)").matches) {
   sliderIsLive = true;
 
 };
-  
- 
+
+
 
 $('.proposition-slider').slick({
   slidesToShow: 5,
   slidesToScroll: 1,
   centerMode: true,
-  // autoplay: true,
-  // autoplaySpeed: 2000,
+  variableWidth: true,
+  autoplay: true,
+  autoplaySpeed: 2000,
   prevArrow: '<button type="button" class="slick__btn slick-prev"></button>',
   nextArrow: '<button type="button" class="slick__btn slick-next"></button>',
+  responsive: [{
+    breakpoint: 577,
+    settings: {
+      // slidesToShow: 2,
+      // slidesToScroll:4,
+      arrows: false,
+      dots: true
+    }
+  }]
+});
+
+$(function () {
+
+  $(".star").rateYo({
+    starWidth: "16px",
+    normalFill: "rgba(193, 193, 193, 0.3)",
+    ratedFill: "#ffb800",
+    spacing: "6px",
+    fullStar: true,
+
+  });
+
+});
+
+$(function () {
+  $('.product-info__input').styler();
+});
+
+
+
+$(document).ready(function () {
+  $('.product-popup__box').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: '<button type="button" class="slick__btn slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick__btn slick-next"></button>'
+  })
+
+  $('.product-popup__link').magnificPopup({
+    type:'inline',
+    callbacks: {
+      open: function () {
+        $('.product-slider').slick({
+          dots: true,
+          prevArrow: '<button type="button" class="slick__btn slick-prev"></button>',
+          nextArrow: '<button type="button" class="slick__btn slick-next"></button>',
+        });
+
+      }
+    }
+  });
+
 });

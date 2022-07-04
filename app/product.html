@@ -36,12 +36,12 @@
 
 
             <li class="menu__item">
-              <a class="menu__link menu__link--active">
+              <a class="menu__link" href="index.html">
                 Главная
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__link" href="catalog.html">
+              <a class="menu__link menu__link--active" href="catalog.html">
                 Блюда
               </a>
             </li>
@@ -128,6 +128,90 @@
           </ul>
         </div>
       </div>
+
+      <section class="product-info">
+        <div class="product-info__wrapper">
+          <div class="container">
+            <div class="product-info__inner">
+
+              <div class="product-info__popup product-popup">
+                <div class="product-popup__box">
+                  <a class="product-popup__link" href="#popup">
+                    <img class="product-popup__img" src="images/product/burger-s.png" alt="Фото бургера" width="400"
+                      height="400">
+                  </a>
+                  <a class="product-popup__link" href="#popup">
+                    <img class="product-popup__img" src="images/product/burger-s.png" alt="Фото бургера" width="400"
+                      height="400">
+                  </a>
+                  <a class="product-popup__link" href="#popup">
+                    <img class="product-popup__img" src="images/product/burger-s.png" alt="Фото бургера" width="400"
+                      height="400">
+                  </a>
+                </div>
+
+                <div id="popup" class="product-popup__inner mfp-hide">
+                  <div class="product-popup__slider product-slider">
+                    <div class="product-slider__item">
+                      <img class="product-slider__img" src="images/product/burger.png" alt="Фото бургера zoom"
+                        width="750" height="750">
+                    </div>
+                    <div class="product-slider__item">
+                      <img class="product-slider__img" src="images/product/burger.png" alt="Фото бургера zoom"
+                        width="750" height="750">
+                    </div>
+                    <div class="product-slider__item">
+                      <img class="product-slider__img" src="images/product/burger.png" alt="Фото бургера zoom"
+                        width="750" height="750">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-info__content">
+                <h2 class="title product-info__title">
+                  Чизбургер с листьями салата
+                </h2>
+                <div class="star" data-rateyo-rating="4"></div>
+                <div class="product-info__price">
+                  160
+                  <span>грн.</span>
+                </div>
+                <form class="product-info__form" action="#" name="productForm">
+                  <label class="sr-only" for="num">Выбрать количество товара</label>
+                  <input class="product-info__input" type="number" id="num" name="num" min="1" value="1">
+                  <button class="btn-icon" type="button">Добавить в корзину</button>
+                </form>
+                <h3 class="product-info__order">
+                  Доставка и оплата
+                </h3>
+                <ul class="product-info__list">
+                  <li class="product-info__item">
+                    <p>Минимальная сумма заказа — 160 грн.</p>
+                  </li>
+                  <li class="product-info__item">
+                    <p>Время доставки заказа — 80-140 мин.</p>
+                  </li>
+                  <li class="product-info__item">
+                    <p>Оплата осуществляется только банковской картой.</p>
+                  </li>
+                  <li class="product-info__item">
+                    <p>Окончательная сумма заказа формируется после сбора товаров.</p>
+                  </li>
+                </ul>
+                <a class="link" href="#">Подробнее</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-info__tabs">
+          <div class="section container">
+
+          </div>
+        </div>
+
+      </section>
 
       <section class="section proposition">
         <div class="container">
@@ -302,7 +386,7 @@
                 <label class="sr-only" for="mail">Введите свой email, чтобы подписаться на нашу страницу</label>
                 <input class="footer__input" type="email" id="mail" name="mail" placeholder="Ваш email"
                   required="required">
-                <button class="footer__btn" type="submit">Подписаться</button>
+                <button class="btn-icon" type="submit">Подписаться</button>
               </form>
             </div>
 

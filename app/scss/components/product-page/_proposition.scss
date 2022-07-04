@@ -1,27 +1,95 @@
 
 .proposition {
  
-
 		&__title{
       margin-bottom: 60px;
+
+      @include r($r-md){
+        font-size: 30px;
+        margin-bottom: 45px;
+      }
+
+      @include r($r-sm){
+        font-size: 20px;
+        margin-bottom: 30px;
+       }
     }
 		
-
 		&__item {
     height: 300px;
 		}
+    
 }
 
-.title {
-}
 .proposition-slider {
-  // display: grid;
-  // grid-template-columns: repeat(5,1fr);
-  // grid-column-gap: 45px;
   position: relative;
-  // padding: 5px;
+
+.slick-list{
+  @include r($r-sm){
+    margin-bottom: 30px;
+   }
+}
+
+  .slick-track{
+    margin: 1px 1px; 
+  }
+
+  .slick-current .product-card{
+    box-shadow: 0px 0px 0px 1px #FF6838;
+  }
+  
   .slick-slide{
-    margin-right: 30px;
+    width: 210px;
+    margin-right: 29px;
+
+    @include r($r-sm){
+     width: 170px;
+     margin-right: 5px;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  
+    li {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+  
+      button {
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $gray;
+        outline: transparent;
+        transition: background-color 0.4s linear,
+          border 0.4s linear, box-shadow 0.4s linear;
+  
+        &:focus {
+          box-shadow: 0 0 0 2px #ff6838;
+          background-color: $gray;
+        }
+  
+        &:hover {
+          background-color: #fff2ed;
+          box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+        }
+  
+        &:active {
+          background-color: #fff2ed;
+        }
+      }
+  
+      &.slick-active {
+        button {
+          background-color: #ff7a50;
+        }
+      }
+    }
+
   }
 
   .slick__btn {
@@ -52,7 +120,7 @@
       width: 11px;
       height: 19px;
       background-color: $gray;
-      mask-size: contain;
+      mask-size: cover;
       mask-position: center;
       mask-repeat: no-repeat;
       transition: background-color .4s linear, border-color .4s linear, box-shadow .4s linear;
@@ -100,21 +168,4 @@
     //   right: 8%;
     // }
   }
-}
-.product-card {
-
-		&__link {
-		}
-
-		&__img {
-		}
-
-		&__name {
-		}
-
-		&__price {
-		}
-
-		&__btn {
-		}
 }

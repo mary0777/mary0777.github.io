@@ -66,61 +66,6 @@
     }
   }
 
-  &__btn {
-    max-width: 100%;
-    color: #fff;
-    padding: 13px 39px 13px 70px;
-    background-color: $orange-900;
-    border-radius: 5px;
-    position: relative;
-    font-weight: 500;
-    font-size: 14px;
-    outline: transparent;
-    transition: background-color 0.4s linear, box-shadow 0.4s linear, color 0.4s linear;
-
-    &::before {
-      content: '';
-      position: absolute;
-      width: 17px;
-      height: 16px;
-      background-color: #fff;
-      mask-image: url('../images/sprite.svg#subscribe-icon');
-      left: 38px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: background-color 0.5s linear;
-    }
-
-    &:focus {
-      background-color: rgba(255, 122, 80, 0.1);
-      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-      color: $orange-900;
-
-      &::before {
-        background-color: $orange-900;
-      }
-    }
-
-    &:hover {
-      background: #fff;
-      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-      color: $orange-900;
-
-      &::before {
-        background-color: $orange-900;
-      }
-    }
-
-    &:active {
-      background-color: rgba(255, 122, 80, 0.1);
-      color: $orange-900;
-
-      &::before {
-        background-color: $orange-900;
-      }
-    }
-  }
-
   &__list {
     column-count: 3;
     margin-right: 45px;

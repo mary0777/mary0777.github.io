@@ -121,7 +121,7 @@
       width: 11px;
       height: 19px;
       background-color: $gray;
-      mask-size: contain;
+      mask-size: cover;
       mask-position: center;
       mask-repeat: no-repeat;
       transition: background-color .4s linear, border-color .4s linear, box-shadow .4s linear;

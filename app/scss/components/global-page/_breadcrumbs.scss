@@ -9,6 +9,7 @@
 
   &__list {
     display: flex;
+    white-space: nowrap;
   }
 
   &__item {
@@ -26,6 +27,16 @@
         top: 50%;
         transform: translateY(-50%);
         right: 6px;
+      }
+    }
+
+    @include r($r-sm) {
+      display: none;
+    }
+    &:first-child,
+    &:last-child{
+      @include r($r-sm) {
+        display: block;
       }
     }
   }
