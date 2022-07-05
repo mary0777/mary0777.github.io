@@ -1,63 +1,59 @@
+.product-slider {
 
-.proposition {
- 
-		&__title{
-      margin-bottom: 60px;
+  &+.mfp-close-btn-in .mfp-close {
+    transition: color 4s ease;
+    color: #00000026;
 
-      @include r($r-md){
-        font-size: 30px;
-        margin-bottom: 45px;
-      }
-
-      @include r($r-sm){
-        font-size: 20px;
-        margin-bottom: 30px;
-       }
+    &:hover {
+      color: #000000a6;
     }
-		
-		&__item {
-    height: 300px;
-		}
-    
-}
-
-.proposition-slider {
-  position: relative;
-
-.slick-list{
-  @include r($r-sm){
-    margin-bottom: 30px;
-   }
-}
-
-  .slick-track{
-    margin: 2px 1px; 
   }
 
-  .slick-current .product-card{
-    box-shadow: 0px 0px 0px 1px #FF6838;
-  }
-  
-  .slick-slide{
-    width: 210px;
-    margin-right: 29px;
+  &+.mfp-close {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 24px;
+    top: 20px;
+    font-size: 60px;
+    border-radius: 3px;
+    transition: background-color 0.4s ease, color 0.4s ease;
+
+    &:active {
+      top: 20px;
+      background-color: rgba(193, 193, 193, 0.3);
+    }
 
     @include r($r-sm){
-     width: 170px;
-     margin-right: 5px;
+      right: 10px;
+      top: 10px;
+      font-size: 40px;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+
+    @include r($r-lg){
+      width: 450px;
+      height: 450px;
+    }
+
+    @include r($r-sm){
+      width: 300px;
+      height: 300px;
     }
   }
 
   .slick-dots {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-  
+
     li {
       &:not(:last-child) {
         margin-right: 15px;
       }
-  
+
       button {
         font-size: 0;
         width: 15px;
@@ -67,39 +63,37 @@
         outline: transparent;
         transition: background-color 0.4s linear,
           border 0.4s linear, box-shadow 0.4s linear;
-  
+
         &:focus {
           box-shadow: 0 0 0 2px #ff6838;
           background-color: $gray;
         }
-  
+
         &:hover {
           background-color: #fff2ed;
           box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
         }
-  
+
         &:active {
           background-color: #fff2ed;
         }
       }
-  
+
       &.slick-active {
         button {
           background-color: #ff7a50;
         }
       }
     }
-
   }
 
   .slick__btn {
-    width: 40px;
-    height: 40px;
-    top: -100px;
-    right: 0;
-    border-radius: 50%;
-    border: 3px solid $gray;
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    transform: translateY(-50%);
     position: absolute;
+    border: 3px solid transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,9 +103,9 @@
 
     &::before {
       content: '';
-      width: 11px;
-      height: 19px;
-      background-color: $gray;
+      width: 19px;
+      height: 32px;
+      background-color: $darkBlue-900e;
       mask-size: cover;
       mask-position: center;
       mask-repeat: no-repeat;
@@ -138,18 +132,18 @@
   }
 
   .slick-prev {
-    right: 60px;
+    left: 60px;
 
     &:before {
-      mask-image: url('../images/sprite.svg#prev-arrow');
+      mask-image: url('../images/sprite.svg#arrow-left-slider');
     }
   }
 
   .slick-next {
-    
+    right: 60px;
 
     &::before {
-      mask-image: url('../images/sprite.svg#next-arrow');
+      mask-image: url('../images/sprite.svg#arrow-right-slider');
     }
   }
 }

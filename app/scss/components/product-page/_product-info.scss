@@ -2,28 +2,41 @@
 
   &__wrapper {
     border-bottom: 1px solid #e4e4e4;
-    padding-bottom: 60px;
+    padding-bottom: 55px;
     margin-bottom: 30px;
   }
 
   &__inner {
     display: flex;
     justify-content: space-between;
+
+    @include r($r-xl) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__popup {
     max-width: 610px;
-    // min-height: 550px;
-    margin-right: 30px;
+    margin-right: 28px;
     background-color: #fff;
-  }
 
-  &__content {
-    max-width: 532px;
+    @include r($r-xl) {
+      margin-bottom: 30px;
+      margin-right: 0;
+    }
+
+    @include r($r-md) {
+      max-width: 345px;
+    }
   }
 
   &__title {
     margin-bottom: 30px;
+
+    @include r($r-md) {
+      margin-bottom: 15px;
+    }
   }
 
   &__price {
@@ -35,11 +48,12 @@
   }
 
   &__form {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
   }
 
   &__input {
     margin-right: 20px;
+    margin-bottom: 15px;
   }
 
   .jq-number {
@@ -126,10 +140,12 @@
     color: #505050;
   }
 
-  &__tabs {}
-
-  .star {
+  &__star {
     margin-bottom: 25px;
+
+    @include r($r-md) {
+      margin-bottom: 15px;
+    }
   }
 
   .jq-ry-container {
@@ -144,253 +160,5 @@
   }
 }
 
-.product-popup{
-
-  &__box{
-    padding: 75px 105px;
-    box-shadow: 0 0 0 1px $silver-200;
-border-radius: 5px;
-  }
-  &__inner {
-    position: relative;
-    background: #FFF;
-    padding: 60px 0 162px;
-    width: auto;
-    max-width: 1728px;
-    margin: 0px auto;
-  }
-
-  .slick__btn {
-    width: 60px;
-    height: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-    border: 3px solid transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s linear;
-    outline: transparent;
-    // z-index: 10;
-
-    @include r($r-lg) {
-      
-    }
-
-    @include r($r-sm) {
-      
-    }
-
-    &::before {
-      content: '';
-      width: 19px;
-      height: 32px;
-      background-color: $darkBlue-900e;
-      mask-size: cover;
-      mask-position: center;
-      mask-repeat: no-repeat;
-      transition: background-color .4s linear, border-color .4s linear, box-shadow .4s linear;
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-    }
-
-    &:hover {
-      background-color: #fff2ed;
-      border-color: #ffae94;
-    }
-
-    &:active {
-      background-color: #fff2ed;
-      border: 3px solid transparent;
-
-      &::before {
-        background-color: #ff7a50;
-      }
-    }
-  }
-
-  .slick-prev {
-    left:25px;
-
-    &:before {
-      mask-image: url('../images/sprite.svg#arrow-left-slider');
-    }
-
-    @include r($r-lg) {
-     
-    }
-  }
-
-  .slick-next {
-    right: 25px;
-
-    &::before {
-      mask-image: url('../images/sprite.svg#arrow-right-slider');
-    }
-
-    @include r($r-lg) {
-      
-    }
-  }
 
 
-&__link{
-  outline: transparent;
-}
-
-
-}
-
-
-.product-slider{
-  .mfp-close-btn-in .mfp-close {
-    color: rgb(0 0 0 0.15);
-    transition: color 4s ease;
-  
-    &:hover{
-      color: rgb(0 0 0 0.65);
-    }
-  }
-  .mfp-close {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    right: 24px;
-    top: 20px;
-    font-size: 60px;
-    border-radius: 3px;
-    transition: background-color 0.4s ease, color 0.4s ease;
-    
-    &:active{
-      top: 20px;
-      background-color: rgba(193, 193, 193, 0.3);
-    }
-    
-  }
-
-  &__img{
-    margin: 0 auto;
-  }
-  
-  .slick__btn {
-    width: 60px;
-    height: 60px;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-    border: 3px solid transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.4s linear;
-    outline: transparent;
-    z-index: 10;
-
-    @include r($r-lg) {
-      
-    }
-    
-    @include r($r-sm) {
-      
-    }
-
-    &::before {
-      content: '';
-      width: 19px;
-      height: 32px;
-      background-color: $darkBlue-900e;
-      mask-size: cover;
-      mask-position: center;
-      mask-repeat: no-repeat;
-      transition: background-color .4s linear, border-color .4s linear, box-shadow .4s linear;
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
-    }
-
-    &:hover {
-      background-color: #fff2ed;
-      border-color: #ffae94;
-    }
-
-    &:active {
-      background-color: #fff2ed;
-      border: 3px solid transparent;
-
-      &::before {
-        background-color: #ff7a50;
-      }
-    }
-  }
-
-  .slick-prev {
-    left:60px;
-
-    &:before {
-      mask-image: url('../images/sprite.svg#arrow-left-slider');
-    }
-
-    @include r($r-lg) {
-     
-    }
-  }
-
-  .slick-next {
-    right: 60px;
-
-    &::before {
-      mask-image: url('../images/sprite.svg#arrow-right-slider');
-    }
-
-    @include r($r-lg) {
-      
-    }
-  }
-
-}
-
-  .slick-dots {
-    display: flex;
-    justify-content: center;
-  
-    li {
-      &:not(:last-child) {
-        margin-right: 15px;
-      }
-  
-      button {
-        font-size: 0;
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        background-color: $gray;
-        outline: transparent;
-        transition: background-color 0.4s linear,
-          border 0.4s linear, box-shadow 0.4s linear;
-  
-        &:focus {
-          box-shadow: 0 0 0 2px #ff6838;
-          background-color: $gray;
-        }
-  
-        &:hover {
-          background-color: #fff2ed;
-          box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
-        }
-  
-        &:active {
-          background-color: #fff2ed;
-        }
-      }
-  
-      &.slick-active {
-        button {
-          background-color: #ff7a50;
-        }
-      }
-    }
-  }

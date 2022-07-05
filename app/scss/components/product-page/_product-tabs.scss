@@ -1,0 +1,316 @@
+.product-info {
+
+  &__tabs {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+.product-tabs {
+
+  &__filter {
+    display: flex;
+    margin-bottom: 30px;
+
+    @include r($r-sm) {
+      overflow-x: scroll;
+    }
+  }
+
+  &__link {
+    font-size: 24px;
+    line-height: 1.5;
+    color: $darkBlue-900e;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      margin-right: 60px;
+    }
+
+    @include r($r-sm) {
+      font-size: 20px;
+    }
+  }
+
+  &__link--active {
+    color: $orange-900;
+  }
+}
+
+.product-descr {
+  display: none;
+
+  &.product-descr--active {
+    display: block;
+  }
+}
+
+.product-description {
+  font-size: 20px;
+  line-height: 1.5;
+  opacity: 0.9;
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    @include r($r-sm){
+      font-size: 16px;
+    }
+  }
+}
+
+.product-characteristics {
+
+  &__item {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+
+    @include r($r-sm){
+      font-size: 16px;
+    }
+  }
+
+  &__num {
+    font-weight: 400;
+  }
+}
+
+.product-reviews {
+  color: #505050;
+
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $darkBlue-900e;
+    margin-bottom: 30px;
+
+    @include r($r-sm){
+      font-size: 20px;
+    }
+  }
+
+  &__inner {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #e4e4e4;
+    }
+
+    @include r($r-sm){
+      padding-bottom: 15px;
+    margin-bottom: 15px;
+    }
+  }
+
+  &__item-top {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+
+    @include r($r-sm){
+      display: block;
+    }
+  }
+
+  &__link {
+    margin-right: 25px;
+  }
+
+  &__img {
+    border-radius: 50%;
+    object-fit: cover;
+
+    @include r($r-sm){
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__box {
+    @include r($r-sm){
+      display: inline-block;
+      transform: translateY(-25px);
+    }
+    }
+
+  &__name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  &__date {
+    letter-spacing: 0.03em;
+  }
+
+  &__star {
+    margin-left: auto;
+
+    @include r($r-sm){
+      display: inline;
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.5;
+
+    @include r($r-sm){
+     font-size: 16px;
+    }
+  }
+
+  &__scale {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  &__grade {
+    margin-right: 15px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  &__box-textarea {
+    margin-right: 30px;
+    max-width: 400px;
+    width: 100%;
+
+    @include r($r-md){
+      margin-bottom: 20px;
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: inline-block;
+  }
+
+  &__textarea,
+  &__input {
+    background: #fff;
+    border: 1px solid $gray;
+    border-radius: 5px;
+    outline: transparent;
+    display: block;
+    padding: 15px;
+
+    &::placeholder {
+      font-size: 16px;
+      color: #c1c1c1;
+    }
+  }
+
+  &__textarea {
+    resize: vertical;
+    max-width: 400px;
+    width: 100%;
+    min-height: 165px;
+
+  }
+
+  &__input {
+    &:not(:last-child) {
+      margin-bottom: 11px;
+    }
+  }
+
+  &__label-check {
+    position: relative;
+    display: block;
+    margin-bottom: 30px;
+    padding-left: 36px;
+    line-height: 1.2;
+    transition: all 0.4s ease;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-color: #fff;
+      border: 1px solid $silver-200;
+      border-radius: 3px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: background .4s linear, border .4s linear;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 9px;
+      top: 12px;
+      left: 12px;
+      transform: translateY(-50%) scale(0);
+      mask-image: url(../images/sprite.svg#check-icon);
+      mask-size: cover;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      background-color: $darkBlue-900e;
+      opacity: 0;
+      position: absolute;
+      z-index: 2;
+      transition: all .1s linear;
+    }
+
+  }
+
+  &__input-check {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all 1s ease;
+
+    &:checked+.product-reviews__label-check {
+      &::before {
+        border: 1px solid $darkBlue-900e;
+      }
+    }
+
+    &:checked+.product-reviews__label-check {
+      &::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    &:focus+.product-reviews__label-check {
+      &::before {
+        border: 1px solid $orange-900;
+      }
+    }
+
+    &:hover+.product-reviews__label-check {
+      &::before {
+        border: 1px solid $orange-900;
+      }
+    }
+  }
+}
