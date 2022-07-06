@@ -1,5 +1,5 @@
 .footer {
-
+  
   &__menu {
     display: flex;
     margin-bottom: 40px;
@@ -12,6 +12,7 @@
 
     @include r($r-sm){
       flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -26,6 +27,7 @@
 
     @include r($r-sm){
       margin-bottom: 30px;
+      margin-right: 0;
     }
 
   }

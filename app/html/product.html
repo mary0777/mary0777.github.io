@@ -1,10 +1,14 @@
-@include('components/global/_head.html')
+@include('components/global/_head-var.html', {
+"page": "Страница товара"
+})
 
 @include('components/product/_header.html')
 
 <main class="main">
   @include('components/product/_breadcrumbs.html')
+
   @include('components/product/_product-info.html')
+
   @include('components/product/_proposition.html')
 </main>
 

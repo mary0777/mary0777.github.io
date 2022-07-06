@@ -4,15 +4,14 @@
   background-color: $silver-100;
   transition: background-color 0.4s linear;
   z-index: 11;
-  
-  &.fixed{
+
+  &.fixed {
     background-color: rgb(251 238 233);
 
-    .menu{
+    .menu {
       padding-top: 20px;
       padding-bottom: 20px;
     }
-
   }
 
   &__logo {
@@ -140,10 +139,14 @@
         }
       }
 
-
       .header__address {
         padding-left: 15px;
       }
+
+      .user-nav {
+        z-index: -1;
+      }
+
 
     }
 

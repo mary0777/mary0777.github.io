@@ -1,11 +1,3 @@
-$(window).scroll(function () {
-  var sticky = $('.header'),
-    scroll = $(window).scrollTop();
-
-  if (scroll >= 50) sticky.addClass('fixed');
-  else sticky.removeClass('fixed');
-});
-
 document.addEventListener('DOMContentLoaded', () => {
 
   const burgerOpen = document.querySelector('.burger-open');
@@ -15,9 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   burgerOpen.addEventListener('click', function (e) {
-    mobileMenu.classList.toggle('menu--active');
+    mobileMenu.classList.add('menu--active');
     burgerClose.classList.add('burger--active');
-    bodyLock.classList.toggle('lock');
+    bodyLock.classList.add('lock');
   });
 
   burgerClose.addEventListener('click', function (e) {
@@ -26,7 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyLock.classList.remove('lock');
   });
 
-
+  document.addEventListener('click', function (e) {
+    if (e.target !== burgerOpen && e.target !== mobileMenu) {
+      burgerClose.classList.remove('burger--active');
+      mobileMenu.classList.remove('menu--active');
+      bodyLock.classList.remove('lock');
+    }
+  });
+ 
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,24 +33,58 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterOpen = document.querySelector('.filter-btn');
   const burgerFilter = document.querySelector('.burger-filter');
   const catalog = document.querySelector('.products-catalog__sidebar');
-  const bodyLock = document.querySelector('body');
+  const catalogg = document.querySelector('.products-catalog__sidebar--active');
+  const lockCatalog = document.querySelector('body');
 
-
+  
   filterOpen.addEventListener('click', function (e) {
-    catalog.classList.toggle('products-catalog__sidebar--active');
+    catalog.classList.add('products-catalog__sidebar--active');
     burgerFilter.classList.add('burger-filter--active');
-    bodyLock.classList.add('lock-catalog');
+    lockCatalog.classList.add('lock-catalog');
+    
   });
-
+  
   burgerFilter.addEventListener('click', function (e) {
     catalog.classList.remove('products-catalog__sidebar--active');
     burgerFilter.classList.remove('burger-filter--active');
-    bodyLock.classList.remove('lock-catalog');
+    lockCatalog.classList.remove('lock-catalog');
   });
 
+  document.addEventListener('click', function (e) {
+    if (e.target !== filterOpen && e.target !== catalog) {
+      burgerFilter.classList.remove('burger-filter--active');
+      catalog.classList.remove('products-catalog__sidebar--active');
+      lockCatalog.classList.remove('lock-catalog');
+    }
+  });
+  
 
 });
 
+
+
+$(window).scroll(function () {
+  var sticky = $('.header'),
+    scroll = $(window).scrollTop();
+
+  if (scroll >= 50) sticky.addClass('fixed');
+  else sticky.removeClass('fixed');
+});
+
+$(document).ready(function(){
+      $(".menu__link--contacts").on("click", function (event) {
+          event.preventDefault();
+          var id  = $(this).attr('href'),
+              top = $(id).offset().top;
+          $('body,html').animate({scrollTop: top}, 1500);
+      });
+  
+      $('.menu__link--contacts').click(function () {
+        $('.menu').toggleClass('menu--active');
+        $('body').toggleClass('lock');
+      });
+  
+  });
 
 
 $(function () {
@@ -130,24 +163,26 @@ $inputTo.on("input", function () {
 });
 
 
-if (window.matchMedia("(min-width: 768px)").matches) {
-  $('.restaurant-slider').slick('unslick');
-  sliderIsLive = false;
-} else {
-  $('.restaurant-slider').slick({
-    arrows: false,
-    fade: true,
-    dots: true,
-    // callbacks: {
-    //   resize: function () {
-    //     $('.restaurant-slider')
-    //   }
-    // }
-      
-  });
-  sliderIsLive = true;
 
+let ssContainer = $(".restaurant-slider")
+const SLICK_SETTINGS = {
+  arrows: false,
+  dots: true,
+  mobileFirst: !0,
+  responsive: [{
+      breakpoint: 767,  // unslick when greater than 767 pixel width
+      settings: "unslick"
+  }]
 };
+
+const ss = $(ssContainer).slick(SLICK_SETTINGS);
+
+$(window).on('resize', function() {
+ 
+  if( $(window).width() < 768 &&  !ss.hasClass('slick-initialized')) {
+      $(ssContainer).slick(SLICK_SETTINGS);
+  }
+});
 
 
 

@@ -163,6 +163,8 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
     margin-bottom: 60px;
+    width: fit-content;
+    margin: 0 auto;
 
     @include r($r-lg) {
       grid-template-columns: repeat(4, 1fr);

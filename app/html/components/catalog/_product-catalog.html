@@ -35,8 +35,8 @@
     </div>
 
     <div class="products-catalog__content">
-
       <div class="products-catalog__sidebar">
+        <h2 class="sr-only">Фильтр товаров</h2>
         <button class="burger-filter" type="button">
           <span class="sr-only">Открыть фильтр товаров</span>
         </button>
@@ -129,15 +129,15 @@
           <form class="price-catalog" action="#" name="priceForm">
             <div class="price-catalog__label">
               <label class="sr-only" for="price-min">Ввести минимальную цену</label>
-              от<input class="price-catalog__from" type="text" id="price-min" name="min" />₴
+              от<input class="price-catalog__from" type="number" id="price-min" name="min" />₴
               <span class="price-catalog__between"></span>
               <label class="sr-only" for="price-max">Ввести максимальную цену</label>
-              до<input class="price-catalog__to" type="text" id="price-max" name="max" />₴
+              до<input class="price-catalog__to" type="number" id="price-max" name="max" />₴
             </div>
 
             <label class="sr-only" for="range">Отфильтровать цену</label>
-            <input type="text" class="price-catalog__input" name="my_range" data-min="0" data-max="1200" data-from="100"
-              data-to="1000" id="range" />
+            <input type="number" class="price-catalog__input" name="my_range" data-min="0" data-max="1200"
+              data-from="100" data-to="1000" id="range" />
           </form>
 
         </div>
@@ -145,10 +145,11 @@
       </div>
 
       <div class="products-catalog__inner">
+        <h2 class="sr-only">Каталог товаров</h2>
         <ul class="products-catalog__list">
           <li class="products-catalog__item">
             <article class="product-card">
-              <a class="product-card__link" href="#">
+              <a class="product-card__link" href="product.html">
                 <img class="product-card__img" src="images/burgers/cheeseburger.png"
                   alt="Фото чизбургер с листьями салата" width="140" height="140">
                 <h3 class="product-card__name">Чизбургер с листьями салата</h3>
@@ -163,7 +164,7 @@
 
           <li class="products-catalog__item">
             <article class="product-card">
-              <a class="product-card__link" href="#">
+              <a class="product-card__link" href="product.html">
                 <img class="product-card__img" src="images/burgers/bif-burger.png" alt="Фото бифбургера" width="140"
                   height="140">
                 <h3 class="product-card__name">Бифбургер</h3>
@@ -178,7 +179,7 @@
 
           <li class="products-catalog__item">
             <article class="product-card">
-              <a class="product-card__link" href="#">
+              <a class="product-card__link" href="product.html">
                 <img class="product-card__img" src="images/burgers/qween-burger.png" alt="Фото королевского чизбергера"
                   width="140" height="140">
                 <h3 class="product-card__name">Королевский чизбургер</h3>
@@ -193,7 +194,7 @@
 
           <li class="products-catalog__item">
             <article class="product-card">
-              <a class="product-card__link" href="#">
+              <a class="product-card__link" href="product.html">
                 <img class="product-card__img" src="images/burgers/black-burger.png" alt="Фото черного гамбургера"
                   width="140" height="140">
                 <h3 class="product-card__name">Черный гамбургер</h3>
