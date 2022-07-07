@@ -1,5 +1,5 @@
 <section class="product-info">
-  <h1 class="sr-only">Самая быстрая доставка еды</h1>
+
   <div class="product-info__wrapper">
     <div class="container">
       <div class="product-info__inner">
@@ -39,9 +39,9 @@
         </div>
 
         <div class="product-info__content">
-          <h2 class="title product-info__title">
+          <h1 class="title product-info__title">
             Чизбургер с листьями салата
-          </h2>
+          </h1>
           <div class="star product-info__star" data-rateyo-rating="4" data-rateyo-read-only="true"></div>
           <div class="product-info__price">
             160
@@ -52,9 +52,9 @@
             <input class="product-info__input" type="number" id="num" name="num" min="1" value="1">
             <button class="btn-icon" type="button">Добавить в корзину</button>
           </form>
-          <h3 class="product-info__order">
+          <h2 class="product-info__order">
             Доставка и оплата
-          </h3>
+          </h2>
           <ul class="product-info__list">
             <li class="product-info__item">
               <p>Минимальная сумма заказа — 160 грн.</p>
@@ -79,62 +79,69 @@
     <div class="section container">
       <div class="product-tabs">
 
-        <div class="product-tabs__filter">
-          <a class="product-tabs__link product-tabs__link--active" href="#description">
-            Описание
-          </a>
-          <a class="product-tabs__link" href="#characteristics">
-            Характеристики
-          </a>
-          <a class="product-tabs__link" href="#reviews">
-            Отзывы
-            <span>(2)</span>
-          </a>
-        </div>
+        <ul class="product-tabs__filter">
+          <li class="product-tabs__item">
+            <a class="product-tabs__link product-tabs__link--active" href="#description">
+              Описание
+            </a>
+          </li>
+          <li class="product-tabs__item">
+            <a class="product-tabs__link" href="#characteristics">
+              Характеристики
+            </a>
+          </li>
+          <li class="product-tabs__item">
+            <a class="product-tabs__link" href="#reviews">
+              Отзывы
+              <span>(2)</span>
+            </a>
+          </li>
+        </ul>
 
-        <div class="product-tabs__content">
+        <ul class="product-tabs__content">
 
-          <div id="description" class="product-description product-descr product-descr--active">
-            <p class="product-description__text">
+          <li id="description" class="product-description product-descr product-descr--active">
+            <p>
               Рубленый бифштекс из натуральной говядины на карамелизованной булочке, с ломтиком сыра «Чеддер»,
-              кетчупом, горчицей, луком и маринованными огурчиками.
-            </p>
-            <p class="product-description__text">
+              кетчупом, горчицей, луком и маринован
               Аллергены: Глютен, Молоко, Горчица, Может содержать сою, яйцо, следы кунжута
             </p>
-            <p class="product-description__text">
+            <p>
               Внешний вид товара может отличаться от изображений, представленных на сайте.
             </p>
-          </div>
+          </li>
 
-          <ul id="characteristics" class="product-characteristics product-descr">
-            <li class="product-characteristics__item">
-              Диаметр:
-              <span class="product-characteristics__num">
-                20 см
-              </span>
-            </li>
-            <li class="product-characteristics__item">
-              Вес:
-              <span class="product-characteristics__num">
-                300 гр
-              </span>
-            </li>
-            <li class="product-characteristics__item">
-              Калорийность (на 100г):
-              <span class="product-characteristics__num">
-                295 ккал
-              </span>
-            </li>
-            <li class="product-characteristics__item">
-              Срок хранения:
-              <span class="product-characteristics__num">
-                до 3 дней
-              </span>
-            </li>
-          </ul>
+          <li id="characteristics" class="product-characteristics product-descr">
 
-          <div id="reviews" class="product-reviews product-descr">
+            <ul>
+              <li>
+                Диаметр:
+                <span>
+                  20 см
+                </span>
+              </li>
+              <li>
+                Вес:
+                <span>
+                  300 гр
+                </span>
+              </li>
+              <li>
+                Калорийность (на 100г):
+                <span>
+                  295 ккал
+                </span>
+              </li>
+              <li>
+                Срок хранения:
+                <span>
+                  до 3 дней
+                </span>
+              </li>
+            </ul>
+          </li>
+
+          <li id="reviews" class="product-reviews product-descr">
 
             <h3 class="product-reviews__title">
               Мнения наших клиентов
@@ -149,7 +156,7 @@
                   </a>
                   <div class="product-reviews__box">
                     <a class="product-reviews__name">Андрей</a>
-                    <div class="product-reviews__date">10.06.2021</div>
+                    <time class="product-reviews__date">10.06.2021</time>
                   </div>
                   <div class="star product-reviews__star" data-rateyo-rating="5" data-rateyo-read-only="true">
                     <span class="sr-only">Рейтинг Андрея</span>
@@ -170,7 +177,7 @@
                   </a>
                   <div class="product-reviews__box">
                     <a class="product-reviews__name">Екатерина Белая</a>
-                    <div class="product-reviews__date">7.06.2021</div>
+                    <time class="product-reviews__date">7.06.2021</time>
                   </div>
                   <div class="star product-reviews__star" data-rateyo-rating="4" data-rateyo-read-only="true">
                     <span class="sr-only">Рейтинг Екатерины Белой</span>
@@ -202,28 +209,27 @@
                   <label class="product-reviews__label" for="review">
                     Ваш отзыв *
                   </label>
-                  <textarea class="product-reviews__textarea" name="review" id="review"
-                    placeholder="Введите текст отзыва"></textarea>
+                  <textarea class="textarea" name="review" id="review" placeholder="Введите текст отзыва"></textarea>
                 </div>
 
                 <div class="product-reviews__block">
                   <label class="product-reviews__label" for="name">
                     Имя
                   </label>
-                  <input class="product-reviews__input" type="text" name="name" id="name"
+                  <input class="input-placeholder" type="text" name="name" id="name"
                     placeholder="Введите ваше имя"></input>
 
                   <label class="product-reviews__label" for="email">
                     Email *
                   </label>
-                  <input class="product-reviews__input" type="email" name="email" id="email"
+                  <input class="input-placeholder" type="email" name="email" id="email"
                     placeholder="youremail@mail.com"></input>
                 </div>
               </div>
 
 
-              <input class="product-reviews__input-check" type="checkbox" name="check" id="check"></input>
-              <label class="product-reviews__label-check" for="check">
+              <input class="input-checkbox" type="checkbox" name="check" id="check"></input>
+              <label class="label-checkbox" for="check">
                 Сохранить моё имя, email и адрес сайта в этом браузере для последующих моих комментариев.
               </label>
 
@@ -231,9 +237,9 @@
 
             </form>
 
-          </div>
+          </li>
 
-        </div>
+        </ul>
 
       </div>
     </div>

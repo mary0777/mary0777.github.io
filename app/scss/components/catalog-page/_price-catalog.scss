@@ -9,9 +9,8 @@
     align-items: center;
     margin-bottom: 7px;
   }
-
-  &__from,
-  &__to {
+  
+.jq-number {
     max-width: 70px;
     width: 100%;
     outline: transparent;
@@ -24,12 +23,20 @@
     border: 1px solid #faeded;
     border-radius: 3px;
     color: $dark;
-    padding: 12px 14px;
+    padding: 12px 5px;
 
     &:focus {
       border: 1px solid $orange-900;
     }
   }
+
+  .jq-number__field input {
+    text-align: center;
+    border: transparent;
+    background-color: transparent;
+    width: 100%;
+    outline: transparent;
+}
 
   &__between {
     margin: 0 10px;

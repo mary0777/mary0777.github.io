@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     bodyLock.classList.remove('lock');
   });
 
+
   document.addEventListener('click', function (e) {
     if (e.target !== burgerOpen && e.target !== mobileMenu) {
       burgerClose.classList.remove('burger--active');
@@ -219,7 +220,7 @@ $(function () {
 
 
 $(function () {
-  $('.product-info__input').styler();
+  $('.product-info__input, .price-catalog__from, .price-catalog__to').styler();
 });
 
 
@@ -239,7 +240,8 @@ $(document).ready(function () {
   })
 
   $('.product-popup__link').magnificPopup({
-    type:'inline',
+    type: 'inline',
+    
     callbacks: {
       open: function () {
         $('.product-slider').slick({
@@ -254,17 +256,9 @@ $(document).ready(function () {
           }]
         });
       },
-
-      // close: function () { 
-      //   $('.product-popup__link')
-      // },
-
-      // resize: function () {
-      //   $('.product-slider, .product-popup__link')
-      // }
-
     }
   });
+
 
 });
 

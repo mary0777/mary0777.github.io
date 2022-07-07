@@ -1,7 +1,7 @@
 .product-popup {
 
   &__box {
-    padding: 75px 105px;
+    padding: 72px 105px;
     box-shadow: 0 0 0 1px $silver-200;
     border-radius: 5px;
 
@@ -55,6 +55,10 @@
     &:hover {
       background-color: #fff2ed;
       border-color: #ffae94;
+
+      &::before {
+        background-color: #ff7a50;
+      }
     }
 
     &:active {
@@ -88,6 +92,8 @@
   }
 
   &__img {
+    object-fit: cover;
+    
     @include r($r-md) {
       width: 300px;
       height: 300px;

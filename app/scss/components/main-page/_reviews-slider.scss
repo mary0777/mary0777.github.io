@@ -134,6 +134,10 @@
     &:hover {
       background-color: #fff2ed;
       border-color: #ffae94;
+
+      &::before {
+        background-color: #ff7a50;
+      }
     }
 
     &:active {

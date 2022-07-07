@@ -167,87 +167,9 @@
     flex-direction: column;
   }
 
-  &__label {
-    position: relative;
-    padding-left: 36px;
-    line-height: 1.2;
-    transition: all 0.4s ease;
-    cursor: pointer;
-
+  .label-checkbox {
     &:not(:last-child) {
       margin-bottom: 12px;
-    }
-
-    &::before {
-      content: "";
-      display: block;
-      width: 24px;
-      height: 24px;
-      background-color: #faeded;
-      border: 1px solid $silver-200;
-      border-radius: 3px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      transition: background .4s linear, border .4s linear;
-    }
-
-    &::after {
-      content: "";
-      display: block;
-      width: 12px;
-      height: 9px;
-      top: 12px;
-      left: 12px;
-      transform: translateY(-50%) scale(0);
-      mask-image: url(../images/sprite.svg#check-icon);
-      mask-size: cover;
-      mask-position: center;
-      mask-repeat: no-repeat;
-      background-color: $darkBlue-900e;
-      opacity: 0;
-      position: absolute;
-      z-index: 2;
-      transition: all .1s linear;
-    }
-
-    &:hover {
-      color: $orange-900;
-    }
-  }
-
-  &__input {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
-    transition: all 1s ease;
-
-    &:checked+.products-catalog__label {
-      &::before {
-        border: 1px solid $darkBlue-900e;
-      }
-    }
-
-    &:checked+.products-catalog__label {
-      &::after {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-      }
-    }
-
-    &:focus+.products-catalog__label {
-      &::before {
-        border: 1px solid $orange-900;
-      }
-    }
-
-    &:hover+.products-catalog__label {
-      &::before {
-        border: 1px solid $orange-900;
-      }
     }
   }
 
@@ -261,9 +183,9 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin-bottom: 57px;
     width: fit-content;
     margin: 0 auto;
+    margin: 0 auto 57px;
 
     @include r($r-xl) {
       grid-template-columns: repeat(3, 1fr);
