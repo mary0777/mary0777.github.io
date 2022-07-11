@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   document.addEventListener('click', function (e) {
-    if (e.target !== burgerOpen && e.target !== mobileMenu) {
+    if (e.target.classList.contains('lock')) {
       burgerClose.classList.remove('burger--active');
       mobileMenu.classList.remove('menu--active');
       bodyLock.classList.remove('lock');
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('click', function (e) {
-    if (e.target !== filterOpen && e.target !== catalog) {
+    if (e.target.classList.contains('lock-catalog'))  {
       burgerFilter.classList.remove('burger-filter--active');
       catalog.classList.remove('products-catalog__sidebar--active');
       lockCatalog.classList.remove('lock-catalog');

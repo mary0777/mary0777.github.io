@@ -244,7 +244,8 @@ body {
   }
 
   &:hover {
-    &::placeholder {
+    &.input-placeholder::placeholder,
+    &.textarea::placeholder {
       color: $darkBlue-900e;
       opacity: 0.9;
     }
