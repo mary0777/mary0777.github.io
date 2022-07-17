@@ -1,0 +1,105 @@
+.footer {
+  
+  &__menu {
+    display: flex;
+    margin-bottom: 40px;
+
+    @include r($r-lg) {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      margin-bottom: 30px;
+    }
+
+    @include r($r-sm){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__info {
+    margin-right: 70px;
+    max-width: 200px;
+
+    @include r($r-lg) {
+      margin-right: 40px;
+      margin-bottom: 70px;
+    }
+
+    @include r($r-sm){
+      margin-bottom: 30px;
+      margin-right: 0;
+    }
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  .input-placeholder {
+    padding: 13px 15px;
+    margin-bottom: 10px;
+   
+    &::placeholder {
+      font-size: 14px;
+      color: $gray;
+    }
+  }
+
+  &__list {
+    column-count: 3;
+    margin-right: 45px;
+
+    @include r($r-lg) {
+      order: 3;
+    }
+
+    @include r($r-md) {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      column-gap: 60px;
+      margin: 0;
+    }
+    
+    @include r($r-sm){
+      grid-template-columns: repeat(1,1fr);
+     
+    }
+
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    letter-spacing: 0.01em;
+    border-radius: 5px;
+    outline: transparent;
+    transition: color 0.4s linear, background-color 0.4s linear, box-shadow 0.4s linear;
+
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.01);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+
+    &:hover {
+      color: $orange-900;
+    }
+  }
+
+  &__copy {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+    line-height: 1;
+    border-top: 1px solid rgb(194, 194, 194, 0.2);
+  }
+
+  &__box {
+    @include r($r-lg) {
+      margin-bottom: 30px;
+      margin-right: 10px;
+    }
+  }
+}

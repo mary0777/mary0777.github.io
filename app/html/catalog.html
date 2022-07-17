@@ -1,0 +1,21 @@
+@include('components/global/_head-var.html', {
+"page": "Страница каталога"
+})
+
+@include('components/catalog/_header.html')
+
+<main class="main">
+
+  @include('components/global/_breadcrumbs.html')
+
+  @include('components/catalog/_product-catalog.html')
+
+  @include('components/global/_download-app.html')
+
+  @include('components/catalog/_sales.html')
+
+</main>
+
+@include('components/global/_footer.html')
+
+@include('components/global/_footer-scripts.html')

@@ -7,10 +7,33 @@ const uglify         = require('gulp-uglify');
 const imagemin       = require('gulp-imagemin');
 const del            = require('del');
 const browserSync    = require('browser-sync').create();
-const svgSprite = require('gulp-svg-sprite');
+const svgSprite      = require('gulp-svg-sprite');
+const fileInclude    = require('gulp-file-include');
+// const cheerio = require('gulp-cheerio');
+// const replace = require('gulp-replace');
+
+const htmlInclude = () => {
+  return src(['app/html/*.html']) // Находит любой .html файл в папке "html", куда будем подключать другие .html файлы													
+  .pipe(fileInclude({
+    prefix: '@',
+    basepath: '@file',
+  }))
+  .pipe(dest('app')) // указываем, в какую папку поместить готовый файл html
+  .pipe(browserSync.stream());
+}
 
 function svgSprites() {
   return src('app/images/icons/*.svg') // выбираем в папке с иконками все файлы с расширением svg
+//   .pipe(cheerio({
+//     run: ($) => {
+//         $("[fill]").removeAttr("fill"); // очищаем цвет у иконок по умолчанию, чтобы можно было задать свой
+//         $("[stroke]").removeAttr("stroke"); // очищаем, если есть лишние атрибуты строк
+//         $("[style]").removeAttr("style"); // убираем внутренние стили для иконок
+//     },
+//     parserOptions: { xmlMode: true },
+//   })
+// )
+// .pipe(replace('&gt;','>')) // боремся с заменой символа 
     .pipe(
       svgSprite({
         mode: {
@@ -20,7 +43,7 @@ function svgSprites() {
         },
       })
     )
-		.pipe(dest('app/images')); // указываем, в какую папку поместить готовый файл спрайта
+		.pipe(dest('app/images')); // 
 }
 
 function browsersync() {
@@ -47,6 +70,12 @@ function styles() {
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/slick-carousel/slick/slick.js',
+    'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/ion-rangeSlider/js/ion.rangeSlider.js',
+    'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+    'node_modules/rateyo/src/jquery.rateyo.js',
+    'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
     'app/js/main.js'
   ])
     .pipe(concat('main.min.js'))
@@ -89,6 +118,7 @@ function watching() {
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
   watch(['app/images/icons/*.svg'], svgSprites);
+  watch(['app/html/**/*.html'], htmlInclude);
 }
 
 exports.styles = styles;
@@ -98,8 +128,10 @@ exports.watching = watching;
 exports.images = images;
 exports.svgSprites = svgSprites;
 exports.cleanDist = cleanDist;
+exports.htmlInclude = htmlInclude;
 
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching, svgSprites);
+exports.default = parallel(styles, scripts, browsersync, watching, svgSprites, htmlInclude,);
+
 

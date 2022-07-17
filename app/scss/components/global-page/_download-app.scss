@@ -1,0 +1,74 @@
+.download-app {
+
+  &__inner {
+    background-repeat: no-repeat;
+    background-position: right;
+    display: flex;
+    align-items: center;
+    min-height: 380px;
+    background-size: 570px 380px;
+
+    @include r($r-xl) {
+      background-image: none !important;
+      min-height: 0;
+    }
+  }
+
+  &__info {
+    max-width: 540px;
+
+    @include r($r-xl) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 45px;
+
+    @include r($r-sm) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 1.5;
+    opacity: 0.9;
+
+    @include r($r-sm) {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+
+    &:not(:last-child){
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 135px;
+    outline: transparent;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.4s linear, box-shadow 0.4s linear;
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.01);
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 2px rgba(255, 104, 56, 0.7);
+    }
+  }
+}
