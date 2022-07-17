@@ -95,7 +95,7 @@
     margin-right: 30px;
 
     @include r($r-md) {
-      position: absolute;
+      position: fixed;
       max-width: 330px;
       top: 0;
       right: 10px;

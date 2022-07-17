@@ -158,6 +158,10 @@
 
   }
 
+  &__list{
+    margin-bottom: 60px;
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

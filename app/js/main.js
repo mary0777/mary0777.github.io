@@ -81,8 +81,8 @@ $(document).ready(function(){
       });
   
       $('.menu__link--contacts').click(function () {
-        $('.menu').toggleClass('menu--active');
-        $('body').toggleClass('lock');
+        $('.menu').removeClass('menu--active');
+        $('body').removeClass('lock');
       });
   
   });
