@@ -1,0 +1,81 @@
+.restaurant {
+
+  @include r($r-md) {
+    padding-bottom: 85px;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+    text-align: center;
+    @include line-clamp(1);
+
+    @include r($r-sm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include r($r-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include r($r-md) {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    
+      li {
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+    
+        button {
+          font-size: 0;
+          width: 15px;
+          height: 15px;
+          border-radius: 50%;
+          background-color: $gray;
+          outline: transparent;
+          transition: background-color 0.4s linear,
+            border 0.4s linear, box-shadow 0.4s linear;
+    
+          &:focus {
+            box-shadow: 0 0 0 2px #ff6838;
+            background-color: $gray;
+          }
+    
+          &:hover {
+            background-color: #fff2ed;
+            box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+          }
+    
+          &:active {
+            background-color: #fff2ed;
+          }
+        }
+    
+        &.slick-active {
+          button {
+            background-color: #ff7a50;
+          }
+        }
+      }
+
+    }
+
+  }
+  .slick-list{
+    padding: 3px;
+  }
+
+}

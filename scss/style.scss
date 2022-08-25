@@ -1,0 +1,44 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+
+
+@import './components/main-page/hero';
+@import './components/global-page/header';
+@import './components/main-page/categories';
+@import './components/global-page/product-card';
+@import './components/main-page/features';
+@import './components/main-page/restaurant';
+@import './components/global-page/restaurant-card';
+@import './components/main-page/reviews';
+@import './components/main-page/reviews-slider';
+@import './components/global-page/download-app';
+@import './components/global-page/footer';
+@import './components/global-page/contacts';
+@import './components/global-page/social';
+
+
+@import './components/global-page/breadcrumbs';
+@import './components/catalog-page/product-catalog';
+@import './components/catalog-page/price-catalog';
+@import './components/catalog-page/sales';
+@import './components/global-page/pagination';
+
+
+@import './components/product-page/product-info';
+@import './components/product-page/product-popup';
+@import './components/product-page/product-slider';
+@import './components/product-page/product-tabs';
+@import './components/product-page/proposition';
+
+
+
+
+
+
+
+
+

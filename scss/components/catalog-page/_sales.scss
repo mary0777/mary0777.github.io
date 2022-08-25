@@ -1,0 +1,76 @@
+.sales {
+
+  &__title {
+    margin-bottom: 60px;
+
+    @include r($r-md) {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include r($r-lg) {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    li {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      button {
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $gray;
+        outline: transparent;
+        transition: background-color 0.4s linear,
+          border 0.4s linear, box-shadow 0.4s linear;
+
+        &:focus {
+          box-shadow: 0 0 0 2px #ff6838;
+          background-color: $gray;
+        }
+
+        &:hover {
+          background-color: #fff2ed;
+          box-shadow: 0 0 0 2px rgba(255, 122, 80, 0.7);
+        }
+
+        &:active {
+          background-color: #fff2ed;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background-color: #ff7a50;
+        }
+      }
+    }
+
+  }
+
+  .restaurant-card {
+    justify-content: flex-start;
+
+    &__text {
+      @include line-clamp(3);
+      font-size: 24px;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.breadcrumbs {
+  background-color: rgba(255, 122, 80, 0.1);
+  margin-bottom: 60px;
+  padding: 24px 0;
+
+  @include r($r-md) {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    white-space: nowrap;
+  }
+
+  &__item {
+    position: relative;
+    padding-right: 17px;
+
+    &:not(:last-child) {
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../images/icons/arrow-page-line.svg);
+        width: 6px;
+        height: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 6px;
+      }
+    }
+
+    @include r($r-sm) {
+      display: none;
+    }
+    &:first-child,
+    &:last-child{
+      @include r($r-sm) {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: #505050;
+    transition: color 0.4s linear;
+
+    &:hover {
+      color: $orange-900;
+    }
+
+    &--active {
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
